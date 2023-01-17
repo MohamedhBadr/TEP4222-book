@@ -1,0 +1,4355 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Problem set 3 - Symmetric input-output tables &#8212; My sample book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Lecture 4 - Leontief Price Model" href="Lecture_4.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    <b> Welcome to TEP4222! </b>
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown-notebooks.html">
+   Notebooks with MyST Markdown
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_2.html">
+   Lecture 2 - Exploratory Data Analysis of the Use Table
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_3.html">
+   Lecture 3 - Symmetric input-output table of the Norwegian economy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_4.html">
+   Lecture 4 - Leontief Price Model
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Problem set 3 - Symmetric input-output tables
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/PS3.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPS3.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/PS3.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Problem set 3 - Symmetric input-output tables</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-set-3-symmetric-input-output-tables">
+<h1>Problem set 3 - Symmetric input-output tables<a class="headerlink" href="#problem-set-3-symmetric-input-output-tables" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import your data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;IOweek3data.xlsx&#39;</span><span class="p">)</span> <span class="c1">#place &quot;r&quot; before the path string to address special character, such as &#39;\&#39;. Don&#39;t forget to put the file name at the end of the path + &#39;.xlsx&#39;</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_9404</span><span class="o">/</span><span class="mf">1051882253.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#import your data</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;IOweek3data.xlsx&#39;</span><span class="p">)</span> <span class="c1">#place &quot;r&quot; before the path string to address special character, such as &#39;\&#39;. Don&#39;t forget to put the file name at the end of the path + &#39;.xlsx&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span>
+
+<span class="nn">~\Anaconda3\envs\TEP4222\lib\site-packages\pandas\util\_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>                     <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span>                 <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">311</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">312</span> 
+<span class="g g-Whitespace">    </span><span class="mi">313</span>         <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">~\Anaconda3\envs\TEP4222\lib\site-packages\pandas\io\excel\_base.py</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, thousands, decimal, comment, skipfooter, convert_float, mangle_dupe_cols, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">455</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">456</span>         <span class="n">should_close</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">457</span>         <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span>     <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">459</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+
+<span class="nn">~\Anaconda3\envs\TEP4222\lib\site-packages\pandas\io\excel\_base.py</span> in <span class="ni">__init__</span><span class="nt">(self, path_or_buffer, engine, storage_options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1374</span>                 <span class="n">ext</span> <span class="o">=</span> <span class="s2">&quot;xls&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1375</span>             <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1376</span>                 <span class="n">ext</span> <span class="o">=</span> <span class="n">inspect_excel_format</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1377</span>                     <span class="n">content_or_path</span><span class="o">=</span><span class="n">path_or_buffer</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span>
+<span class="g g-Whitespace">   </span><span class="mi">1378</span>                 <span class="p">)</span>
+
+<span class="nn">~\Anaconda3\envs\TEP4222\lib\site-packages\pandas\io\excel\_base.py</span> in <span class="ni">inspect_excel_format</span><span class="nt">(content_or_path, storage_options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1248</span>         <span class="n">content_or_path</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">content_or_path</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1249</span> 
+<span class="ne">-&gt; </span><span class="mi">1250</span>     <span class="k">with</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1251</span>         <span class="n">content_or_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">is_text</span><span class="o">=</span><span class="kc">False</span>
+<span class="g g-Whitespace">   </span><span class="mi">1252</span>     <span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
+
+<span class="nn">~\Anaconda3\envs\TEP4222\lib\site-packages\pandas\io\common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">793</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">794</span>             <span class="c1"># Binary mode</span>
+<span class="ne">--&gt; </span><span class="mi">795</span>             <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">796</span>         <span class="n">handles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">797</span> 
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;IOweek3data.xlsx&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Define Z (Interindustry Matrix)</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">18</span><span class="p">]</span> <span class="c1"># first select relevant rows</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">21</span><span class="p">]</span> <span class="c1"># select relevant columns</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#drop irrelevant columns</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">)</span> <span class="c1">#reset index</span>
+<span class="n">Z</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Agriculture, hunting, forestry &amp; fishing</th>
+      <th>Mining &amp; quarrying</th>
+      <th>Food production, beverages &amp; tobacco</th>
+      <th>Textiles, leather &amp; wearing apparel</th>
+      <th>Wood, paper &amp; publishing</th>
+      <th>Petroleum, chemicals &amp; non-metallic mineral products</th>
+      <th>Metal &amp; metal products</th>
+      <th>Electrical &amp; machinery</th>
+      <th>Transport equipment</th>
+      <th>Manufacturing &amp; recycling</th>
+      <th>Electricity, gas &amp; water</th>
+      <th>Construction</th>
+      <th>Sale, maintenance &amp; repair of vehicles; fuel; trade; hotels &amp; restaurants</th>
+      <th>Transport</th>
+      <th>Post &amp; telecommunications</th>
+      <th>Financial intermediation &amp; business activity</th>
+      <th>Public administration; education; health; recreation; other services</th>
+    </tr>
+    <tr>
+      <th>Unnamed: 0</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Agriculture</th>
+      <td>497101.912889</td>
+      <td>26058.023206</td>
+      <td>1.125212e+06</td>
+      <td>69121.693315</td>
+      <td>82155.081288</td>
+      <td>8.404635e+04</td>
+      <td>6.607835e+03</td>
+      <td>9.965651e+03</td>
+      <td>4.674536e+03</td>
+      <td>9174.639170</td>
+      <td>13304.950469</td>
+      <td>1.682228e+04</td>
+      <td>132834.508695</td>
+      <td>3.217192e+04</td>
+      <td>1024.142474</td>
+      <td>4.801851e+04</td>
+      <td>7.830974e+04</td>
+    </tr>
+    <tr>
+      <th>Mining</th>
+      <td>8823.988385</td>
+      <td>272347.144637</td>
+      <td>2.678022e+04</td>
+      <td>9165.218348</td>
+      <td>12791.216035</td>
+      <td>1.116892e+06</td>
+      <td>6.076977e+05</td>
+      <td>3.565131e+04</td>
+      <td>1.459829e+04</td>
+      <td>18377.802613</td>
+      <td>209660.555427</td>
+      <td>1.289983e+05</td>
+      <td>7981.460299</td>
+      <td>1.112941e+04</td>
+      <td>1727.611567</td>
+      <td>5.411941e+04</td>
+      <td>7.040630e+04</td>
+    </tr>
+    <tr>
+      <th>Food</th>
+      <td>139863.036507</td>
+      <td>7674.908334</td>
+      <td>5.641210e+05</td>
+      <td>28298.790138</td>
+      <td>5951.844510</td>
+      <td>4.632331e+04</td>
+      <td>7.721564e+03</td>
+      <td>7.069602e+03</td>
+      <td>2.437356e+03</td>
+      <td>3339.934946</td>
+      <td>6251.813186</td>
+      <td>6.003470e+03</td>
+      <td>234897.020335</td>
+      <td>7.716471e+03</td>
+      <td>1318.229456</td>
+      <td>2.210003e+04</td>
+      <td>1.782807e+05</td>
+    </tr>
+    <tr>
+      <th>Textiles</th>
+      <td>5842.663574</td>
+      <td>2026.044361</td>
+      <td>5.129615e+03</td>
+      <td>576147.542292</td>
+      <td>13028.823277</td>
+      <td>3.582095e+04</td>
+      <td>5.817044e+03</td>
+      <td>1.518631e+04</td>
+      <td>2.024097e+04</td>
+      <td>35458.836469</td>
+      <td>2665.178464</td>
+      <td>1.453648e+04</td>
+      <td>10998.770175</td>
+      <td>5.884372e+03</td>
+      <td>543.787061</td>
+      <td>2.871027e+04</td>
+      <td>5.722477e+04</td>
+    </tr>
+    <tr>
+      <th>Wood prod</th>
+      <td>8261.586543</td>
+      <td>2838.100776</td>
+      <td>8.483314e+04</td>
+      <td>21637.565833</td>
+      <td>413902.001723</td>
+      <td>8.973524e+04</td>
+      <td>2.421484e+04</td>
+      <td>5.705292e+04</td>
+      <td>2.201775e+04</td>
+      <td>64358.770453</td>
+      <td>5614.186908</td>
+      <td>1.719625e+05</td>
+      <td>24508.604664</td>
+      <td>1.124134e+04</td>
+      <td>6305.800422</td>
+      <td>2.133469e+05</td>
+      <td>2.885606e+05</td>
+    </tr>
+    <tr>
+      <th>Petroleum</th>
+      <td>153113.719201</td>
+      <td>58467.483965</td>
+      <td>1.474924e+05</td>
+      <td>141502.465269</td>
+      <td>93892.150085</td>
+      <td>1.955573e+06</td>
+      <td>2.043052e+05</td>
+      <td>3.905605e+05</td>
+      <td>2.214030e+05</td>
+      <td>93492.625994</td>
+      <td>57641.199663</td>
+      <td>1.007111e+06</td>
+      <td>58278.384275</td>
+      <td>2.629581e+05</td>
+      <td>13486.751097</td>
+      <td>1.650390e+05</td>
+      <td>7.380187e+05</td>
+    </tr>
+    <tr>
+      <th>Metals</th>
+      <td>10750.737628</td>
+      <td>34412.598432</td>
+      <td>5.384687e+04</td>
+      <td>10953.009036</td>
+      <td>25289.856905</td>
+      <td>1.482623e+05</td>
+      <td>1.497797e+06</td>
+      <td>1.120291e+06</td>
+      <td>4.489699e+05</td>
+      <td>126264.750393</td>
+      <td>15186.673592</td>
+      <td>7.962276e+05</td>
+      <td>17097.200652</td>
+      <td>1.896162e+04</td>
+      <td>5248.730844</td>
+      <td>6.169129e+04</td>
+      <td>8.409111e+04</td>
+    </tr>
+    <tr>
+      <th>Machinery</th>
+      <td>23922.569153</td>
+      <td>48101.075787</td>
+      <td>3.137510e+04</td>
+      <td>20293.750942</td>
+      <td>26861.428873</td>
+      <td>1.502071e+05</td>
+      <td>1.277660e+05</td>
+      <td>1.828492e+06</td>
+      <td>3.428632e+05</td>
+      <td>33214.621671</td>
+      <td>47086.529045</td>
+      <td>3.353986e+05</td>
+      <td>30894.256432</td>
+      <td>2.737455e+04</td>
+      <td>24632.068581</td>
+      <td>1.614348e+05</td>
+      <td>3.217352e+05</td>
+    </tr>
+    <tr>
+      <th>Vehicles</th>
+      <td>14774.157534</td>
+      <td>6775.529429</td>
+      <td>7.178176e+03</td>
+      <td>3281.867425</td>
+      <td>4592.316879</td>
+      <td>1.741006e+04</td>
+      <td>1.849338e+04</td>
+      <td>6.424725e+04</td>
+      <td>1.040776e+06</td>
+      <td>7909.896783</td>
+      <td>6347.334523</td>
+      <td>1.653291e+04</td>
+      <td>18288.579448</td>
+      <td>6.712736e+04</td>
+      <td>2201.367453</td>
+      <td>3.269125e+04</td>
+      <td>1.906302e+05</td>
+    </tr>
+    <tr>
+      <th>Manufactures</th>
+      <td>8970.755939</td>
+      <td>4792.008571</td>
+      <td>6.276212e+03</td>
+      <td>9363.789847</td>
+      <td>21497.415152</td>
+      <td>3.817335e+04</td>
+      <td>7.272616e+04</td>
+      <td>3.901138e+04</td>
+      <td>1.712787e+04</td>
+      <td>116677.387153</td>
+      <td>6184.312595</td>
+      <td>3.719889e+04</td>
+      <td>9015.839987</td>
+      <td>3.843133e+03</td>
+      <td>917.439759</td>
+      <td>1.628131e+04</td>
+      <td>6.238505e+04</td>
+    </tr>
+    <tr>
+      <th>Utilities</th>
+      <td>27557.118311</td>
+      <td>30384.111327</td>
+      <td>5.261354e+04</td>
+      <td>21687.947852</td>
+      <td>33263.867226</td>
+      <td>1.970114e+05</td>
+      <td>1.148638e+05</td>
+      <td>7.003506e+04</td>
+      <td>2.960127e+04</td>
+      <td>14249.371095</td>
+      <td>248011.101438</td>
+      <td>3.513896e+04</td>
+      <td>32201.933719</td>
+      <td>2.646605e+04</td>
+      <td>10645.061035</td>
+      <td>1.247388e+05</td>
+      <td>2.794817e+05</td>
+    </tr>
+    <tr>
+      <th>Construction</th>
+      <td>12261.733478</td>
+      <td>8096.440296</td>
+      <td>9.764389e+03</td>
+      <td>5785.973491</td>
+      <td>6481.926423</td>
+      <td>3.329238e+04</td>
+      <td>1.292218e+04</td>
+      <td>2.070359e+04</td>
+      <td>7.796464e+03</td>
+      <td>3542.966252</td>
+      <td>18399.603115</td>
+      <td>5.524073e+05</td>
+      <td>11585.651999</td>
+      <td>1.344335e+04</td>
+      <td>10019.449952</td>
+      <td>2.094530e+05</td>
+      <td>3.113333e+05</td>
+    </tr>
+    <tr>
+      <th>Hotels, rest, gas st</th>
+      <td>158519.006886</td>
+      <td>116119.285583</td>
+      <td>2.891389e+05</td>
+      <td>109486.038725</td>
+      <td>139380.414868</td>
+      <td>3.954714e+05</td>
+      <td>2.374684e+05</td>
+      <td>4.069037e+05</td>
+      <td>1.451936e+05</td>
+      <td>64750.240592</td>
+      <td>94182.197769</td>
+      <td>3.131808e+05</td>
+      <td>309216.102661</td>
+      <td>3.441510e+05</td>
+      <td>94455.139234</td>
+      <td>6.998416e+05</td>
+      <td>8.361420e+05</td>
+    </tr>
+    <tr>
+      <th>Transport</th>
+      <td>83609.697018</td>
+      <td>59564.612150</td>
+      <td>1.873416e+05</td>
+      <td>58798.815644</td>
+      <td>99055.644369</td>
+      <td>2.550201e+05</td>
+      <td>1.553554e+05</td>
+      <td>2.120872e+05</td>
+      <td>8.163742e+04</td>
+      <td>46992.604222</td>
+      <td>58648.516587</td>
+      <td>2.547194e+05</td>
+      <td>146138.118522</td>
+      <td>1.004164e+06</td>
+      <td>58255.395186</td>
+      <td>3.787774e+05</td>
+      <td>5.608560e+05</td>
+    </tr>
+    <tr>
+      <th>Telecom</th>
+      <td>4666.898530</td>
+      <td>3700.545007</td>
+      <td>1.356248e+04</td>
+      <td>6786.357750</td>
+      <td>27384.450743</td>
+      <td>3.431287e+04</td>
+      <td>1.503706e+04</td>
+      <td>4.742263e+04</td>
+      <td>1.081735e+04</td>
+      <td>6004.707430</td>
+      <td>12566.871986</td>
+      <td>5.203203e+04</td>
+      <td>47354.134631</td>
+      <td>7.133910e+04</td>
+      <td>322771.720782</td>
+      <td>4.531841e+05</td>
+      <td>4.102567e+05</td>
+    </tr>
+    <tr>
+      <th>Business</th>
+      <td>231964.188570</td>
+      <td>77761.588738</td>
+      <td>3.230799e+05</td>
+      <td>121956.349126</td>
+      <td>205128.795890</td>
+      <td>6.339187e+05</td>
+      <td>2.551179e+05</td>
+      <td>6.592224e+05</td>
+      <td>3.228662e+05</td>
+      <td>91279.811735</td>
+      <td>110194.769284</td>
+      <td>8.199964e+05</td>
+      <td>262659.246822</td>
+      <td>2.510937e+05</td>
+      <td>115031.096003</td>
+      <td>4.378689e+06</td>
+      <td>2.792559e+06</td>
+    </tr>
+    <tr>
+      <th>Pub. ad., health, ed.</th>
+      <td>23989.936502</td>
+      <td>82660.550036</td>
+      <td>3.212698e+04</td>
+      <td>16119.836830</td>
+      <td>19658.737437</td>
+      <td>6.100786e+04</td>
+      <td>3.481416e+04</td>
+      <td>4.492505e+04</td>
+      <td>1.936629e+04</td>
+      <td>7807.682208</td>
+      <td>30711.615954</td>
+      <td>4.679120e+04</td>
+      <td>38510.886862</td>
+      <td>3.950654e+04</td>
+      <td>15349.625863</td>
+      <td>2.658097e+05</td>
+      <td>9.195558e+05</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#define final demand table</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">18</span><span class="p">]</span> <span class="c1"># first select relevant rows</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">22</span><span class="p">:</span><span class="mi">29</span><span class="p">]</span> <span class="c1"># select relevant columns</span>
+<span class="n">Y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Final consumption expenditure by households</th>
+      <th>Final consumption expenditure by non-profit organisations serving households (NPISH)</th>
+      <th>Final consumption expenditure by government</th>
+      <th>Gross fixed capital formation</th>
+      <th>Changes in inventories</th>
+      <th>Changes in valuables</th>
+      <th>Exports: Total (fob)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>9.134494e+05</td>
+      <td>1.548250e+04</td>
+      <td>1.284627e+04</td>
+      <td>4.798503e+04</td>
+      <td>52180.253593</td>
+      <td>415.298030</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.895593e+04</td>
+      <td>7.483355e+02</td>
+      <td>1.847021e+03</td>
+      <td>9.200110e+04</td>
+      <td>263004.994193</td>
+      <td>10011.451039</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2.838590e+06</td>
+      <td>3.773359e+03</td>
+      <td>1.099608e+04</td>
+      <td>2.873236e+00</td>
+      <td>50451.258881</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>8.765577e+05</td>
+      <td>2.745312e+03</td>
+      <td>4.583083e+03</td>
+      <td>1.161654e+04</td>
+      <td>29026.074668</td>
+      <td>1833.285846</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4.073045e+05</td>
+      <td>3.259209e+03</td>
+      <td>5.530014e+03</td>
+      <td>4.953338e+04</td>
+      <td>19972.723650</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.681196e+06</td>
+      <td>1.057488e+04</td>
+      <td>1.342104e+05</td>
+      <td>2.194401e+04</td>
+      <td>110455.479002</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1.367296e+05</td>
+      <td>2.681614e+02</td>
+      <td>6.284678e+02</td>
+      <td>1.828042e+05</td>
+      <td>72064.313174</td>
+      <td>5171.717648</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>7.499983e+05</td>
+      <td>3.414681e+03</td>
+      <td>1.326015e+04</td>
+      <td>2.835195e+06</td>
+      <td>130706.504008</td>
+      <td>7521.079786</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>8.338490e+05</td>
+      <td>3.017737e+03</td>
+      <td>3.763601e+03</td>
+      <td>1.276846e+06</td>
+      <td>53133.550739</td>
+      <td>7739.281990</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>4.902140e+05</td>
+      <td>4.663302e+02</td>
+      <td>4.114115e+02</td>
+      <td>2.191887e+05</td>
+      <td>30550.500432</td>
+      <td>2203.308564</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>6.561401e+05</td>
+      <td>2.722711e+03</td>
+      <td>1.514165e+04</td>
+      <td>5.552230e+02</td>
+      <td>6769.427801</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>8.822751e+04</td>
+      <td>3.964570e+03</td>
+      <td>8.166574e+03</td>
+      <td>6.401315e+06</td>
+      <td>4345.830939</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2.806023e+06</td>
+      <td>4.100671e+04</td>
+      <td>2.243674e+04</td>
+      <td>7.274456e+04</td>
+      <td>28075.809713</td>
+      <td>17885.646234</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1.041197e+06</td>
+      <td>4.616569e+04</td>
+      <td>1.105707e+05</td>
+      <td>2.500763e+04</td>
+      <td>39244.558364</td>
+      <td>1461.002920</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>7.388600e+05</td>
+      <td>2.121879e+03</td>
+      <td>3.994132e+03</td>
+      <td>1.518988e+04</td>
+      <td>28.768194</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>6.520113e+06</td>
+      <td>1.694900e+05</td>
+      <td>2.782430e+05</td>
+      <td>1.481008e+06</td>
+      <td>4215.172933</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>4.311671e+06</td>
+      <td>4.197077e+06</td>
+      <td>8.324934e+06</td>
+      <td>5.152613e+04</td>
+      <td>3451.313096</td>
+      <td>627.972894</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#define Value added table</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">19</span><span class="p">:</span><span class="mi">45</span><span class="p">]</span> <span class="c1"># first select relevant rows</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">21</span><span class="p">]</span> <span class="c1"># select relevant columns</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#drop irrelevant columns</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Unnamed: 1&#39;</span><span class="p">)</span> <span class="c1">#reset index</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">V</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Agriculture, hunting, forestry &amp; fishing</th>
+      <th>Mining &amp; quarrying</th>
+      <th>Food production, beverages &amp; tobacco</th>
+      <th>Textiles, leather &amp; wearing apparel</th>
+      <th>Wood, paper &amp; publishing</th>
+      <th>Petroleum, chemicals &amp; non-metallic mineral products</th>
+      <th>Metal &amp; metal products</th>
+      <th>Electrical &amp; machinery</th>
+      <th>Transport equipment</th>
+      <th>Manufacturing &amp; recycling</th>
+      <th>Electricity, gas &amp; water</th>
+      <th>Construction</th>
+      <th>Sale, maintenance &amp; repair of vehicles; fuel; trade; hotels &amp; restaurants</th>
+      <th>Transport</th>
+      <th>Post &amp; telecommunications</th>
+      <th>Financial intermediation &amp; business activity</th>
+      <th>Public administration; education; health; recreation; other services</th>
+    </tr>
+    <tr>
+      <th>Unnamed: 1</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Taxes less subsidies on products purchased: Total</th>
+      <td>9.094403e+04</td>
+      <td>157167.018426</td>
+      <td>164173.754462</td>
+      <td>71663.168994</td>
+      <td>60438.043314</td>
+      <td>424756.382071</td>
+      <td>180435.663424</td>
+      <td>246401.553849</td>
+      <td>112448.252659</td>
+      <td>38792.370047</td>
+      <td>73615.755042</td>
+      <td>2.750111e+05</td>
+      <td>2.754920e+05</td>
+      <td>214237.557368</td>
+      <td>53017.654640</td>
+      <td>3.604163e+05</td>
+      <td>3.032797e+05</td>
+    </tr>
+    <tr>
+      <th>Other net taxes on production</th>
+      <td>5.272858e+03</td>
+      <td>107941.813561</td>
+      <td>-35.944341</td>
+      <td>18458.717786</td>
+      <td>15295.316745</td>
+      <td>87678.497173</td>
+      <td>63961.184738</td>
+      <td>28719.387064</td>
+      <td>11674.155763</td>
+      <td>4487.267973</td>
+      <td>72039.759969</td>
+      <td>6.389290e+04</td>
+      <td>3.538742e+05</td>
+      <td>79237.836093</td>
+      <td>76330.835165</td>
+      <td>5.735303e+05</td>
+      <td>1.153492e+05</td>
+    </tr>
+    <tr>
+      <th>Taxes on products purchased</th>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Subsidies on products purchased</th>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Compensation of employees; wages, salaries, &amp; employers' social contributions: High-skilled</th>
+      <td>6.591788e+04</td>
+      <td>131816.833089</td>
+      <td>169326.870854</td>
+      <td>69197.378191</td>
+      <td>147160.772530</td>
+      <td>272120.516991</td>
+      <td>222041.569470</td>
+      <td>389025.876036</td>
+      <td>174448.858799</td>
+      <td>69148.295090</td>
+      <td>128131.904618</td>
+      <td>3.874417e+05</td>
+      <td>9.388687e+05</td>
+      <td>403886.704140</td>
+      <td>179387.895365</td>
+      <td>3.062913e+06</td>
+      <td>4.876681e+06</td>
+    </tr>
+    <tr>
+      <th>Compensation of employees; wages, salaries, &amp; employers' social contributions: Low-skilled</th>
+      <td>1.189300e+05</td>
+      <td>82646.453477</td>
+      <td>45205.117871</td>
+      <td>24918.887587</td>
+      <td>27420.276391</td>
+      <td>64274.557052</td>
+      <td>48123.937111</td>
+      <td>84853.639364</td>
+      <td>32501.752462</td>
+      <td>16229.557622</td>
+      <td>15688.000127</td>
+      <td>2.816352e+05</td>
+      <td>2.758475e+05</td>
+      <td>123762.032754</td>
+      <td>48842.343905</td>
+      <td>2.653186e+05</td>
+      <td>3.792340e+05</td>
+    </tr>
+    <tr>
+      <th>Compensation of employees; wages, salaries, &amp; employers' social contributions: Medium-skilled</th>
+      <td>6.809301e+05</td>
+      <td>362757.092648</td>
+      <td>309375.933887</td>
+      <td>194743.898914</td>
+      <td>235948.058012</td>
+      <td>526180.538050</td>
+      <td>414521.225331</td>
+      <td>739012.339724</td>
+      <td>305176.826258</td>
+      <td>139684.445666</td>
+      <td>161165.739756</td>
+      <td>1.170899e+06</td>
+      <td>2.414096e+06</td>
+      <td>982613.455520</td>
+      <td>495731.758223</td>
+      <td>1.605018e+06</td>
+      <td>2.452847e+06</td>
+    </tr>
+    <tr>
+      <th>Compensation of employees; wages, salaries, &amp; employers' social contributions: Total</th>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Operating surplus: Consumption of fixed capital</th>
+      <td>2.393865e+05</td>
+      <td>381876.835192</td>
+      <td>143132.420819</td>
+      <td>62955.582120</td>
+      <td>99926.013331</td>
+      <td>452948.850236</td>
+      <td>257911.530380</td>
+      <td>378388.379584</td>
+      <td>145433.545750</td>
+      <td>56002.384714</td>
+      <td>428560.698862</td>
+      <td>4.730012e+05</td>
+      <td>6.394493e+05</td>
+      <td>492193.505989</td>
+      <td>432617.967641</td>
+      <td>2.657379e+06</td>
+      <td>1.438234e+06</td>
+    </tr>
+    <tr>
+      <th>Operating surplus: Rents on land</th>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Operating surplus: Royalties on resources</th>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Operating surplus: Remaining net operating surplus</th>
+      <td>6.635880e+05</td>
+      <td>927731.089442</td>
+      <td>382131.698836</td>
+      <td>89299.757401</td>
+      <td>179487.228738</td>
+      <td>600278.781736</td>
+      <td>287287.540581</td>
+      <td>426520.569509</td>
+      <td>163536.367275</td>
+      <td>146235.548377</td>
+      <td>207420.969630</td>
+      <td>4.963698e+05</td>
+      <td>1.451684e+06</td>
+      <td>470165.580176</td>
+      <td>329532.783852</td>
+      <td>4.267086e+06</td>
+      <td>8.425492e+05</td>
+    </tr>
+    <tr>
+      <th>Employment: Low-skilled male</th>
+      <td>1.373127e+05</td>
+      <td>17865.084590</td>
+      <td>22190.458943</td>
+      <td>4313.014155</td>
+      <td>3800.969289</td>
+      <td>13702.961814</td>
+      <td>11291.294894</td>
+      <td>10923.767197</td>
+      <td>5427.234318</td>
+      <td>3082.575230</td>
+      <td>4273.605348</td>
+      <td>5.308432e+04</td>
+      <td>3.383722e+04</td>
+      <td>16298.881554</td>
+      <td>3863.192485</td>
+      <td>2.116744e+04</td>
+      <td>3.493528e+04</td>
+    </tr>
+    <tr>
+      <th>Employment: Low-skilled female</th>
+      <td>7.385012e+04</td>
+      <td>4896.026662</td>
+      <td>12836.578736</td>
+      <td>3509.756503</td>
+      <td>1647.124689</td>
+      <td>4800.601683</td>
+      <td>2407.947880</td>
+      <td>5868.365417</td>
+      <td>1253.580744</td>
+      <td>1141.697862</td>
+      <td>1662.882230</td>
+      <td>5.753979e+03</td>
+      <td>2.276948e+04</td>
+      <td>2593.708439</td>
+      <td>1168.598383</td>
+      <td>1.469065e+04</td>
+      <td>3.844272e+04</td>
+    </tr>
+    <tr>
+      <th>Employment: Medium-skilled male</th>
+      <td>4.607112e+05</td>
+      <td>36316.293602</td>
+      <td>47733.672326</td>
+      <td>20836.431955</td>
+      <td>18865.354950</td>
+      <td>56014.885444</td>
+      <td>49268.206270</td>
+      <td>58944.330277</td>
+      <td>29788.664896</td>
+      <td>15965.085294</td>
+      <td>13102.522442</td>
+      <td>9.939685e+04</td>
+      <td>1.247512e+05</td>
+      <td>73675.109617</td>
+      <td>20600.906042</td>
+      <td>6.474947e+04</td>
+      <td>1.011131e+05</td>
+    </tr>
+    <tr>
+      <th>Employment: Medium-skilled female</th>
+      <td>2.422219e+05</td>
+      <td>15329.559768</td>
+      <td>26835.537386</td>
+      <td>18202.525204</td>
+      <td>6883.588192</td>
+      <td>17189.405123</td>
+      <td>9537.030046</td>
+      <td>30022.887312</td>
+      <td>5748.382573</td>
+      <td>5524.016103</td>
+      <td>4623.586026</td>
+      <td>1.232851e+04</td>
+      <td>1.219723e+05</td>
+      <td>12284.023256</td>
+      <td>5598.151647</td>
+      <td>4.778650e+04</td>
+      <td>8.615605e+04</td>
+    </tr>
+    <tr>
+      <th>Employment: High-skilled male</th>
+      <td>1.190478e+04</td>
+      <td>5790.560890</td>
+      <td>7060.084142</td>
+      <td>2767.477631</td>
+      <td>3654.905858</td>
+      <td>8976.898913</td>
+      <td>8345.892531</td>
+      <td>10305.588455</td>
+      <td>5315.260887</td>
+      <td>2805.320898</td>
+      <td>4659.647917</td>
+      <td>1.439439e+04</td>
+      <td>2.548440e+04</td>
+      <td>11545.390911</td>
+      <td>3741.999517</td>
+      <td>5.804858e+04</td>
+      <td>1.172219e+05</td>
+    </tr>
+    <tr>
+      <th>Employment: High-skilled female</th>
+      <td>3.771565e+03</td>
+      <td>1638.563644</td>
+      <td>3218.873896</td>
+      <td>1868.272108</td>
+      <td>1212.535194</td>
+      <td>2218.462869</td>
+      <td>1406.767593</td>
+      <td>3025.246569</td>
+      <td>1013.747633</td>
+      <td>816.837390</td>
+      <td>1186.035934</td>
+      <td>4.711872e+03</td>
+      <td>1.661244e+04</td>
+      <td>4124.347108</td>
+      <td>2570.358366</td>
+      <td>3.565456e+04</td>
+      <td>1.291303e+05</td>
+    </tr>
+    <tr>
+      <th>Employment hours: Low-skilled male</th>
+      <td>2.991473e+05</td>
+      <td>41614.989628</td>
+      <td>50978.818226</td>
+      <td>10279.636125</td>
+      <td>8661.426278</td>
+      <td>32007.104591</td>
+      <td>26381.917024</td>
+      <td>25445.944612</td>
+      <td>12470.960726</td>
+      <td>7077.222451</td>
+      <td>9564.009427</td>
+      <td>1.263145e+05</td>
+      <td>8.022140e+04</td>
+      <td>37715.017217</td>
+      <td>8582.232812</td>
+      <td>4.660291e+04</td>
+      <td>7.593104e+04</td>
+    </tr>
+    <tr>
+      <th>Employment hours: Low-skilled female</th>
+      <td>1.607892e+05</td>
+      <td>11316.590457</td>
+      <td>29318.607495</td>
+      <td>8214.186907</td>
+      <td>3648.541990</td>
+      <td>10985.471275</td>
+      <td>5474.735762</td>
+      <td>13601.651570</td>
+      <td>2769.224118</td>
+      <td>2520.431337</td>
+      <td>3679.437807</td>
+      <td>1.344137e+04</td>
+      <td>5.198433e+04</td>
+      <td>5784.547873</td>
+      <td>2484.290826</td>
+      <td>3.028918e+04</td>
+      <td>7.730076e+04</td>
+    </tr>
+    <tr>
+      <th>Employment hours: Medium-skilled male</th>
+      <td>9.255911e+05</td>
+      <td>83083.002006</td>
+      <td>103680.699695</td>
+      <td>49518.009093</td>
+      <td>42178.705090</td>
+      <td>129270.022143</td>
+      <td>113969.673855</td>
+      <td>135615.662902</td>
+      <td>67493.265261</td>
+      <td>36127.748092</td>
+      <td>26919.449075</td>
+      <td>2.205786e+05</td>
+      <td>2.845168e+05</td>
+      <td>167940.062101</td>
+      <td>44516.808695</td>
+      <td>1.394293e+05</td>
+      <td>2.196806e+05</td>
+    </tr>
+    <tr>
+      <th>Employment hours: Medium-skilled female</th>
+      <td>4.781629e+05</td>
+      <td>35288.312014</td>
+      <td>57614.978586</td>
+      <td>42671.124060</td>
+      <td>15041.993942</td>
+      <td>38830.013186</td>
+      <td>21567.482204</td>
+      <td>69845.865036</td>
+      <td>12595.047027</td>
+      <td>12154.861710</td>
+      <td>9252.236992</td>
+      <td>2.643071e+04</td>
+      <td>2.735216e+05</td>
+      <td>27319.193360</td>
+      <td>11661.439268</td>
+      <td>9.845315e+04</td>
+      <td>1.679308e+05</td>
+    </tr>
+    <tr>
+      <th>Employment hours: High-skilled male</th>
+      <td>2.593795e+04</td>
+      <td>13270.211970</td>
+      <td>15470.947576</td>
+      <td>6377.051538</td>
+      <td>7862.099934</td>
+      <td>19844.176953</td>
+      <td>18569.386019</td>
+      <td>22423.824566</td>
+      <td>11288.285082</td>
+      <td>5756.537864</td>
+      <td>9771.127539</td>
+      <td>3.153460e+04</td>
+      <td>5.402114e+04</td>
+      <td>24923.834942</td>
+      <td>7807.786035</td>
+      <td>1.196906e+05</td>
+      <td>2.481296e+05</td>
+    </tr>
+    <tr>
+      <th>Employment hours: High-skilled female</th>
+      <td>8.229411e+03</td>
+      <td>3647.591889</td>
+      <td>6744.051167</td>
+      <td>4029.219404</td>
+      <td>2493.898752</td>
+      <td>4622.908510</td>
+      <td>2999.663082</td>
+      <td>6394.217420</td>
+      <td>2045.487322</td>
+      <td>1535.209301</td>
+      <td>2377.957975</td>
+      <td>1.045777e+04</td>
+      <td>3.312122e+04</td>
+      <td>8698.380652</td>
+      <td>5390.384411</td>
+      <td>7.112155e+04</td>
+      <td>2.508670e+05</td>
+    </tr>
+    <tr>
+      <th>Employment: Vulnerable employment</th>
+      <td>7.122507e+05</td>
+      <td>27635.866161</td>
+      <td>39235.754701</td>
+      <td>25520.286880</td>
+      <td>11586.790568</td>
+      <td>42767.545235</td>
+      <td>30360.365074</td>
+      <td>45067.125337</td>
+      <td>16082.247644</td>
+      <td>11920.961101</td>
+      <td>8655.763511</td>
+      <td>9.043871e+04</td>
+      <td>1.611353e+05</td>
+      <td>50261.573634</td>
+      <td>11426.774648</td>
+      <td>6.738022e+04</td>
+      <td>1.420209e+05</td>
+    </tr>
+    <tr>
+      <th>Employment hours: Vulnerable employment</th>
+      <td>1.424632e+06</td>
+      <td>64114.721974</td>
+      <td>83012.413933</td>
+      <td>61514.471486</td>
+      <td>26059.837389</td>
+      <td>100890.762837</td>
+      <td>71980.214032</td>
+      <td>107499.380742</td>
+      <td>37698.616748</td>
+      <td>28270.067896</td>
+      <td>17684.451305</td>
+      <td>2.114095e+05</td>
+      <td>3.955899e+05</td>
+      <td>117773.136209</td>
+      <td>25732.545455</td>
+      <td>1.461578e+05</td>
+      <td>3.208501e+05</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#define enviornmental extention matrix</span>
+<span class="n">F</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">45</span><span class="p">:</span><span class="mi">1352</span><span class="p">]</span> <span class="c1"># first select relevant rows</span>
+<span class="n">F</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">21</span><span class="p">]</span> <span class="c1"># select relevant columns</span>
+<span class="n">F</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#drop irrelevant columns</span>
+<span class="n">F</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Unnamed: 1&#39;</span><span class="p">)</span> <span class="c1">#reset index</span>
+<span class="n">F</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">F</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Agriculture, hunting, forestry &amp; fishing</th>
+      <th>Mining &amp; quarrying</th>
+      <th>Food production, beverages &amp; tobacco</th>
+      <th>Textiles, leather &amp; wearing apparel</th>
+      <th>Wood, paper &amp; publishing</th>
+      <th>Petroleum, chemicals &amp; non-metallic mineral products</th>
+      <th>Metal &amp; metal products</th>
+      <th>Electrical &amp; machinery</th>
+      <th>Transport equipment</th>
+      <th>Manufacturing &amp; recycling</th>
+      <th>Electricity, gas &amp; water</th>
+      <th>Construction</th>
+      <th>Sale, maintenance &amp; repair of vehicles; fuel; trade; hotels &amp; restaurants</th>
+      <th>Transport</th>
+      <th>Post &amp; telecommunications</th>
+      <th>Financial intermediation &amp; business activity</th>
+      <th>Public administration; education; health; recreation; other services</th>
+    </tr>
+    <tr>
+      <th>Unnamed: 1</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CO2 - combustion - air</th>
+      <td>4.939039e+11</td>
+      <td>1.443283e+12</td>
+      <td>3.276179e+11</td>
+      <td>1.050158e+11</td>
+      <td>2.282363e+11</td>
+      <td>3.273921e+12</td>
+      <td>1.992663e+12</td>
+      <td>4.973815e+11</td>
+      <td>1.220617e+11</td>
+      <td>3.869871e+11</td>
+      <td>1.193727e+13</td>
+      <td>1.109823e+12</td>
+      <td>7.754038e+11</td>
+      <td>2.181800e+12</td>
+      <td>7.982864e+10</td>
+      <td>7.800680e+11</td>
+      <td>8.334399e+11</td>
+    </tr>
+    <tr>
+      <th>CH4 - combustion - air</th>
+      <td>9.516753e+07</td>
+      <td>7.654547e+08</td>
+      <td>1.094720e+08</td>
+      <td>2.450139e+07</td>
+      <td>8.265188e+07</td>
+      <td>8.556090e+08</td>
+      <td>4.079041e+08</td>
+      <td>1.594770e+08</td>
+      <td>3.404503e+07</td>
+      <td>1.139982e+08</td>
+      <td>1.767784e+09</td>
+      <td>1.244185e+08</td>
+      <td>2.048843e+08</td>
+      <td>2.113423e+08</td>
+      <td>2.828895e+07</td>
+      <td>3.213427e+08</td>
+      <td>7.919885e+08</td>
+    </tr>
+    <tr>
+      <th>N2O - combustion - air</th>
+      <td>1.638629e+07</td>
+      <td>1.544336e+07</td>
+      <td>8.141714e+06</td>
+      <td>1.455044e+06</td>
+      <td>1.452288e+07</td>
+      <td>3.434836e+07</td>
+      <td>1.344777e+07</td>
+      <td>8.334214e+06</td>
+      <td>1.925045e+06</td>
+      <td>1.134510e+07</td>
+      <td>2.654340e+08</td>
+      <td>2.199115e+07</td>
+      <td>1.750095e+07</td>
+      <td>4.868725e+07</td>
+      <td>1.216067e+06</td>
+      <td>1.185168e+07</td>
+      <td>1.085825e+07</td>
+    </tr>
+    <tr>
+      <th>SOx - combustion - air</th>
+      <td>7.226274e+08</td>
+      <td>2.836443e+09</td>
+      <td>7.390396e+08</td>
+      <td>3.248803e+08</td>
+      <td>6.455231e+08</td>
+      <td>9.266159e+09</td>
+      <td>4.444428e+09</td>
+      <td>1.137077e+09</td>
+      <td>2.521278e+08</td>
+      <td>1.184708e+09</td>
+      <td>3.348788e+10</td>
+      <td>4.305363e+08</td>
+      <td>2.026332e+08</td>
+      <td>7.413425e+09</td>
+      <td>6.190908e+07</td>
+      <td>8.936104e+08</td>
+      <td>1.235322e+09</td>
+    </tr>
+    <tr>
+      <th>NOx - combustion - air</th>
+      <td>5.194113e+09</td>
+      <td>2.673420e+09</td>
+      <td>9.026085e+08</td>
+      <td>2.577074e+08</td>
+      <td>7.881720e+08</td>
+      <td>6.170464e+09</td>
+      <td>2.422750e+09</td>
+      <td>1.270001e+09</td>
+      <td>4.990560e+08</td>
+      <td>1.041263e+09</td>
+      <td>1.858723e+10</td>
+      <td>4.518867e+09</td>
+      <td>3.274153e+09</td>
+      <td>2.032272e+10</td>
+      <td>1.952812e+08</td>
+      <td>1.969859e+09</td>
+      <td>1.211741e+09</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>Water Withdrawal Blue - Electricity - once-through - Electricity by solar thermal</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Water Withdrawal Blue - Electricity - once-through - Electricity by tide, wave, ocean</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Water Withdrawal Blue - Electricity - once-through - Electricity by Geothermal</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>4.720505e+03</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Water Withdrawal Blue - Electricity - once-through - Electricity nec</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Water Withdrawal Blue - Domestic - domestic Water Withdrawal Blue</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+  </tbody>
+</table>
+<p>1304 rows × 17 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create on table with Z and Y Intermediate trade and final demand</span>
+<span class="n">Z_Y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">18</span><span class="p">]</span> <span class="c1"># first select relevant rows</span>
+<span class="n">Z_Y</span> <span class="o">=</span> <span class="n">Z_Y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">29</span><span class="p">]</span> <span class="c1"># select relevant columns</span>
+
+<span class="c1">#Get total output X</span>
+<span class="n">Z_Y</span><span class="p">[</span><span class="s2">&quot;Total_output&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Z_Y</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">Z_Y</span><span class="p">[</span><span class="s2">&quot;Total_output&quot;</span><span class="p">]</span> 
+
+<span class="c1">#adjust X and create A (interindustry technical coefficients)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">X</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">Z</span><span class="o">/</span><span class="n">X</span>
+<span class="n">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mhelsaye\AppData\Local\Temp/ipykernel_9936/262183373.py:6: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with &#39;numeric_only=None&#39;) is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
+  Z_Y[&quot;Total_output&quot;] = Z_Y.sum(axis=1)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Agriculture, hunting, forestry &amp; fishing</th>
+      <th>Mining &amp; quarrying</th>
+      <th>Food production, beverages &amp; tobacco</th>
+      <th>Textiles, leather &amp; wearing apparel</th>
+      <th>Wood, paper &amp; publishing</th>
+      <th>Petroleum, chemicals &amp; non-metallic mineral products</th>
+      <th>Metal &amp; metal products</th>
+      <th>Electrical &amp; machinery</th>
+      <th>Transport equipment</th>
+      <th>Manufacturing &amp; recycling</th>
+      <th>Electricity, gas &amp; water</th>
+      <th>Construction</th>
+      <th>Sale, maintenance &amp; repair of vehicles; fuel; trade; hotels &amp; restaurants</th>
+      <th>Transport</th>
+      <th>Post &amp; telecommunications</th>
+      <th>Financial intermediation &amp; business activity</th>
+      <th>Public administration; education; health; recreation; other services</th>
+    </tr>
+    <tr>
+      <th>Unnamed: 0</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Agriculture</th>
+      <td>0.151603</td>
+      <td>0.008704</td>
+      <td>0.269629</td>
+      <td>0.039237</td>
+      <td>0.041160</td>
+      <td>0.010886</td>
+      <td>0.001356</td>
+      <td>0.001361</td>
+      <td>0.001264</td>
+      <td>0.007561</td>
+      <td>0.006556</td>
+      <td>0.002170</td>
+      <td>0.017158</td>
+      <td>0.006480</td>
+      <td>0.000445</td>
+      <td>0.002388</td>
+      <td>0.004213</td>
+    </tr>
+    <tr>
+      <th>Mining</th>
+      <td>0.002691</td>
+      <td>0.090973</td>
+      <td>0.006417</td>
+      <td>0.005203</td>
+      <td>0.006408</td>
+      <td>0.144662</td>
+      <td>0.124707</td>
+      <td>0.004869</td>
+      <td>0.003948</td>
+      <td>0.015145</td>
+      <td>0.103318</td>
+      <td>0.016638</td>
+      <td>0.001031</td>
+      <td>0.002242</td>
+      <td>0.000751</td>
+      <td>0.002692</td>
+      <td>0.003788</td>
+    </tr>
+    <tr>
+      <th>Food</th>
+      <td>0.042655</td>
+      <td>0.002564</td>
+      <td>0.135178</td>
+      <td>0.016064</td>
+      <td>0.002982</td>
+      <td>0.006000</td>
+      <td>0.001585</td>
+      <td>0.000966</td>
+      <td>0.000659</td>
+      <td>0.002752</td>
+      <td>0.003081</td>
+      <td>0.000774</td>
+      <td>0.030342</td>
+      <td>0.001554</td>
+      <td>0.000573</td>
+      <td>0.001099</td>
+      <td>0.009591</td>
+    </tr>
+    <tr>
+      <th>Textiles</th>
+      <td>0.001782</td>
+      <td>0.000677</td>
+      <td>0.001229</td>
+      <td>0.327055</td>
+      <td>0.006527</td>
+      <td>0.004640</td>
+      <td>0.001194</td>
+      <td>0.002074</td>
+      <td>0.005474</td>
+      <td>0.029221</td>
+      <td>0.001313</td>
+      <td>0.001875</td>
+      <td>0.001421</td>
+      <td>0.001185</td>
+      <td>0.000236</td>
+      <td>0.001428</td>
+      <td>0.003079</td>
+    </tr>
+    <tr>
+      <th>Wood prod</th>
+      <td>0.002520</td>
+      <td>0.000948</td>
+      <td>0.020328</td>
+      <td>0.012283</td>
+      <td>0.207367</td>
+      <td>0.011623</td>
+      <td>0.004969</td>
+      <td>0.007792</td>
+      <td>0.005955</td>
+      <td>0.053037</td>
+      <td>0.002767</td>
+      <td>0.022179</td>
+      <td>0.003166</td>
+      <td>0.002264</td>
+      <td>0.002742</td>
+      <td>0.010611</td>
+      <td>0.015524</td>
+    </tr>
+    <tr>
+      <th>Petroleum</th>
+      <td>0.046696</td>
+      <td>0.019530</td>
+      <td>0.035343</td>
+      <td>0.080325</td>
+      <td>0.047040</td>
+      <td>0.253289</td>
+      <td>0.041926</td>
+      <td>0.053343</td>
+      <td>0.059877</td>
+      <td>0.077045</td>
+      <td>0.028405</td>
+      <td>0.129894</td>
+      <td>0.007528</td>
+      <td>0.052966</td>
+      <td>0.005865</td>
+      <td>0.008209</td>
+      <td>0.039704</td>
+    </tr>
+    <tr>
+      <th>Metals</th>
+      <td>0.003279</td>
+      <td>0.011495</td>
+      <td>0.012903</td>
+      <td>0.006218</td>
+      <td>0.012670</td>
+      <td>0.019203</td>
+      <td>0.307366</td>
+      <td>0.153009</td>
+      <td>0.121422</td>
+      <td>0.104052</td>
+      <td>0.007484</td>
+      <td>0.102695</td>
+      <td>0.002208</td>
+      <td>0.003819</td>
+      <td>0.002283</td>
+      <td>0.003068</td>
+      <td>0.004524</td>
+    </tr>
+    <tr>
+      <th>Machinery</th>
+      <td>0.007296</td>
+      <td>0.016067</td>
+      <td>0.007518</td>
+      <td>0.011520</td>
+      <td>0.013458</td>
+      <td>0.019455</td>
+      <td>0.026219</td>
+      <td>0.249734</td>
+      <td>0.092726</td>
+      <td>0.027371</td>
+      <td>0.023204</td>
+      <td>0.043259</td>
+      <td>0.003991</td>
+      <td>0.005514</td>
+      <td>0.010712</td>
+      <td>0.008029</td>
+      <td>0.017309</td>
+    </tr>
+    <tr>
+      <th>Vehicles</th>
+      <td>0.004506</td>
+      <td>0.002263</td>
+      <td>0.001720</td>
+      <td>0.001863</td>
+      <td>0.002301</td>
+      <td>0.002255</td>
+      <td>0.003795</td>
+      <td>0.008775</td>
+      <td>0.281473</td>
+      <td>0.006518</td>
+      <td>0.003128</td>
+      <td>0.002132</td>
+      <td>0.002362</td>
+      <td>0.013521</td>
+      <td>0.000957</td>
+      <td>0.001626</td>
+      <td>0.010256</td>
+    </tr>
+    <tr>
+      <th>Manufactures</th>
+      <td>0.002736</td>
+      <td>0.001601</td>
+      <td>0.001504</td>
+      <td>0.005315</td>
+      <td>0.010770</td>
+      <td>0.004944</td>
+      <td>0.014924</td>
+      <td>0.005328</td>
+      <td>0.004632</td>
+      <td>0.096151</td>
+      <td>0.003048</td>
+      <td>0.004798</td>
+      <td>0.001165</td>
+      <td>0.000774</td>
+      <td>0.000399</td>
+      <td>0.000810</td>
+      <td>0.003356</td>
+    </tr>
+    <tr>
+      <th>Utilities</th>
+      <td>0.008404</td>
+      <td>0.010149</td>
+      <td>0.012608</td>
+      <td>0.012311</td>
+      <td>0.016665</td>
+      <td>0.025517</td>
+      <td>0.023571</td>
+      <td>0.009565</td>
+      <td>0.008006</td>
+      <td>0.011743</td>
+      <td>0.122216</td>
+      <td>0.004532</td>
+      <td>0.004160</td>
+      <td>0.005331</td>
+      <td>0.004630</td>
+      <td>0.006204</td>
+      <td>0.015036</td>
+    </tr>
+    <tr>
+      <th>Construction</th>
+      <td>0.003740</td>
+      <td>0.002704</td>
+      <td>0.002340</td>
+      <td>0.003284</td>
+      <td>0.003247</td>
+      <td>0.004312</td>
+      <td>0.002652</td>
+      <td>0.002828</td>
+      <td>0.002109</td>
+      <td>0.002920</td>
+      <td>0.009067</td>
+      <td>0.071248</td>
+      <td>0.001497</td>
+      <td>0.002708</td>
+      <td>0.004357</td>
+      <td>0.010418</td>
+      <td>0.016749</td>
+    </tr>
+    <tr>
+      <th>Hotels, rest, gas st</th>
+      <td>0.048344</td>
+      <td>0.038788</td>
+      <td>0.069285</td>
+      <td>0.062151</td>
+      <td>0.069830</td>
+      <td>0.051222</td>
+      <td>0.048731</td>
+      <td>0.055575</td>
+      <td>0.039267</td>
+      <td>0.053359</td>
+      <td>0.046412</td>
+      <td>0.040393</td>
+      <td>0.039941</td>
+      <td>0.069320</td>
+      <td>0.041078</td>
+      <td>0.034808</td>
+      <td>0.044983</td>
+    </tr>
+    <tr>
+      <th>Transport</th>
+      <td>0.025499</td>
+      <td>0.019897</td>
+      <td>0.044892</td>
+      <td>0.033378</td>
+      <td>0.049627</td>
+      <td>0.033031</td>
+      <td>0.031881</td>
+      <td>0.028967</td>
+      <td>0.022078</td>
+      <td>0.038726</td>
+      <td>0.028901</td>
+      <td>0.032853</td>
+      <td>0.018877</td>
+      <td>0.202262</td>
+      <td>0.025335</td>
+      <td>0.018839</td>
+      <td>0.030173</td>
+    </tr>
+    <tr>
+      <th>Telecom</th>
+      <td>0.001423</td>
+      <td>0.001236</td>
+      <td>0.003250</td>
+      <td>0.003852</td>
+      <td>0.013720</td>
+      <td>0.004444</td>
+      <td>0.003086</td>
+      <td>0.006477</td>
+      <td>0.002925</td>
+      <td>0.004948</td>
+      <td>0.006193</td>
+      <td>0.006711</td>
+      <td>0.006117</td>
+      <td>0.014369</td>
+      <td>0.140372</td>
+      <td>0.022540</td>
+      <td>0.022071</td>
+    </tr>
+    <tr>
+      <th>Business</th>
+      <td>0.070743</td>
+      <td>0.025975</td>
+      <td>0.077418</td>
+      <td>0.069229</td>
+      <td>0.102770</td>
+      <td>0.082106</td>
+      <td>0.052353</td>
+      <td>0.090036</td>
+      <td>0.087318</td>
+      <td>0.075222</td>
+      <td>0.054302</td>
+      <td>0.105761</td>
+      <td>0.033928</td>
+      <td>0.050576</td>
+      <td>0.050027</td>
+      <td>0.217785</td>
+      <td>0.150234</td>
+    </tr>
+    <tr>
+      <th>Pub. ad., health, ed.</th>
+      <td>0.007316</td>
+      <td>0.027611</td>
+      <td>0.007698</td>
+      <td>0.009151</td>
+      <td>0.009849</td>
+      <td>0.007902</td>
+      <td>0.007144</td>
+      <td>0.006136</td>
+      <td>0.005238</td>
+      <td>0.006434</td>
+      <td>0.015134</td>
+      <td>0.006035</td>
+      <td>0.004974</td>
+      <td>0.007958</td>
+      <td>0.006676</td>
+      <td>0.013221</td>
+      <td>0.049470</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create one table with Intermediate and Value added together to get total output</span>
+<span class="n">Z_V</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">Z</span><span class="p">,</span> <span class="n">V</span><span class="p">])</span>
+<span class="n">Z_V</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Total_Output&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">Z_V</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">Z_V</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Agriculture, hunting, forestry &amp; fishing</th>
+      <th>Mining &amp; quarrying</th>
+      <th>Food production, beverages &amp; tobacco</th>
+      <th>Textiles, leather &amp; wearing apparel</th>
+      <th>Wood, paper &amp; publishing</th>
+      <th>Petroleum, chemicals &amp; non-metallic mineral products</th>
+      <th>Metal &amp; metal products</th>
+      <th>Electrical &amp; machinery</th>
+      <th>Transport equipment</th>
+      <th>Manufacturing &amp; recycling</th>
+      <th>Electricity, gas &amp; water</th>
+      <th>Construction</th>
+      <th>Sale, maintenance &amp; repair of vehicles; fuel; trade; hotels &amp; restaurants</th>
+      <th>Transport</th>
+      <th>Post &amp; telecommunications</th>
+      <th>Financial intermediation &amp; business activity</th>
+      <th>Public administration; education; health; recreation; other services</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Agriculture</th>
+      <td>4.971019e+05</td>
+      <td>2.605802e+04</td>
+      <td>1.125212e+06</td>
+      <td>6.912169e+04</td>
+      <td>8.215508e+04</td>
+      <td>8.404635e+04</td>
+      <td>6.607835e+03</td>
+      <td>9.965651e+03</td>
+      <td>4.674536e+03</td>
+      <td>9.174639e+03</td>
+      <td>1.330495e+04</td>
+      <td>1.682228e+04</td>
+      <td>1.328345e+05</td>
+      <td>3.217192e+04</td>
+      <td>1.024142e+03</td>
+      <td>4.801851e+04</td>
+      <td>7.830974e+04</td>
+    </tr>
+    <tr>
+      <th>Mining</th>
+      <td>8.823988e+03</td>
+      <td>2.723471e+05</td>
+      <td>2.678022e+04</td>
+      <td>9.165218e+03</td>
+      <td>1.279122e+04</td>
+      <td>1.116892e+06</td>
+      <td>6.076977e+05</td>
+      <td>3.565131e+04</td>
+      <td>1.459829e+04</td>
+      <td>1.837780e+04</td>
+      <td>2.096606e+05</td>
+      <td>1.289983e+05</td>
+      <td>7.981460e+03</td>
+      <td>1.112941e+04</td>
+      <td>1.727612e+03</td>
+      <td>5.411941e+04</td>
+      <td>7.040630e+04</td>
+    </tr>
+    <tr>
+      <th>Food</th>
+      <td>1.398630e+05</td>
+      <td>7.674908e+03</td>
+      <td>5.641210e+05</td>
+      <td>2.829879e+04</td>
+      <td>5.951845e+03</td>
+      <td>4.632331e+04</td>
+      <td>7.721564e+03</td>
+      <td>7.069602e+03</td>
+      <td>2.437356e+03</td>
+      <td>3.339935e+03</td>
+      <td>6.251813e+03</td>
+      <td>6.003470e+03</td>
+      <td>2.348970e+05</td>
+      <td>7.716471e+03</td>
+      <td>1.318229e+03</td>
+      <td>2.210003e+04</td>
+      <td>1.782807e+05</td>
+    </tr>
+    <tr>
+      <th>Textiles</th>
+      <td>5.842664e+03</td>
+      <td>2.026044e+03</td>
+      <td>5.129615e+03</td>
+      <td>5.761475e+05</td>
+      <td>1.302882e+04</td>
+      <td>3.582095e+04</td>
+      <td>5.817044e+03</td>
+      <td>1.518631e+04</td>
+      <td>2.024097e+04</td>
+      <td>3.545884e+04</td>
+      <td>2.665178e+03</td>
+      <td>1.453648e+04</td>
+      <td>1.099877e+04</td>
+      <td>5.884372e+03</td>
+      <td>5.437871e+02</td>
+      <td>2.871027e+04</td>
+      <td>5.722477e+04</td>
+    </tr>
+    <tr>
+      <th>Wood prod</th>
+      <td>8.261587e+03</td>
+      <td>2.838101e+03</td>
+      <td>8.483314e+04</td>
+      <td>2.163757e+04</td>
+      <td>4.139020e+05</td>
+      <td>8.973524e+04</td>
+      <td>2.421484e+04</td>
+      <td>5.705292e+04</td>
+      <td>2.201775e+04</td>
+      <td>6.435877e+04</td>
+      <td>5.614187e+03</td>
+      <td>1.719625e+05</td>
+      <td>2.450860e+04</td>
+      <td>1.124134e+04</td>
+      <td>6.305800e+03</td>
+      <td>2.133469e+05</td>
+      <td>2.885606e+05</td>
+    </tr>
+    <tr>
+      <th>Petroleum</th>
+      <td>1.531137e+05</td>
+      <td>5.846748e+04</td>
+      <td>1.474924e+05</td>
+      <td>1.415025e+05</td>
+      <td>9.389215e+04</td>
+      <td>1.955573e+06</td>
+      <td>2.043052e+05</td>
+      <td>3.905605e+05</td>
+      <td>2.214030e+05</td>
+      <td>9.349263e+04</td>
+      <td>5.764120e+04</td>
+      <td>1.007111e+06</td>
+      <td>5.827838e+04</td>
+      <td>2.629581e+05</td>
+      <td>1.348675e+04</td>
+      <td>1.650390e+05</td>
+      <td>7.380187e+05</td>
+    </tr>
+    <tr>
+      <th>Metals</th>
+      <td>1.075074e+04</td>
+      <td>3.441260e+04</td>
+      <td>5.384687e+04</td>
+      <td>1.095301e+04</td>
+      <td>2.528986e+04</td>
+      <td>1.482623e+05</td>
+      <td>1.497797e+06</td>
+      <td>1.120291e+06</td>
+      <td>4.489699e+05</td>
+      <td>1.262648e+05</td>
+      <td>1.518667e+04</td>
+      <td>7.962276e+05</td>
+      <td>1.709720e+04</td>
+      <td>1.896162e+04</td>
+      <td>5.248731e+03</td>
+      <td>6.169129e+04</td>
+      <td>8.409111e+04</td>
+    </tr>
+    <tr>
+      <th>Machinery</th>
+      <td>2.392257e+04</td>
+      <td>4.810108e+04</td>
+      <td>3.137510e+04</td>
+      <td>2.029375e+04</td>
+      <td>2.686143e+04</td>
+      <td>1.502071e+05</td>
+      <td>1.277660e+05</td>
+      <td>1.828492e+06</td>
+      <td>3.428632e+05</td>
+      <td>3.321462e+04</td>
+      <td>4.708653e+04</td>
+      <td>3.353986e+05</td>
+      <td>3.089426e+04</td>
+      <td>2.737455e+04</td>
+      <td>2.463207e+04</td>
+      <td>1.614348e+05</td>
+      <td>3.217352e+05</td>
+    </tr>
+    <tr>
+      <th>Vehicles</th>
+      <td>1.477416e+04</td>
+      <td>6.775529e+03</td>
+      <td>7.178176e+03</td>
+      <td>3.281867e+03</td>
+      <td>4.592317e+03</td>
+      <td>1.741006e+04</td>
+      <td>1.849338e+04</td>
+      <td>6.424725e+04</td>
+      <td>1.040776e+06</td>
+      <td>7.909897e+03</td>
+      <td>6.347335e+03</td>
+      <td>1.653291e+04</td>
+      <td>1.828858e+04</td>
+      <td>6.712736e+04</td>
+      <td>2.201367e+03</td>
+      <td>3.269125e+04</td>
+      <td>1.906302e+05</td>
+    </tr>
+    <tr>
+      <th>Manufactures</th>
+      <td>8.970756e+03</td>
+      <td>4.792009e+03</td>
+      <td>6.276212e+03</td>
+      <td>9.363790e+03</td>
+      <td>2.149742e+04</td>
+      <td>3.817335e+04</td>
+      <td>7.272616e+04</td>
+      <td>3.901138e+04</td>
+      <td>1.712787e+04</td>
+      <td>1.166774e+05</td>
+      <td>6.184313e+03</td>
+      <td>3.719889e+04</td>
+      <td>9.015840e+03</td>
+      <td>3.843133e+03</td>
+      <td>9.174398e+02</td>
+      <td>1.628131e+04</td>
+      <td>6.238505e+04</td>
+    </tr>
+    <tr>
+      <th>Utilities</th>
+      <td>2.755712e+04</td>
+      <td>3.038411e+04</td>
+      <td>5.261354e+04</td>
+      <td>2.168795e+04</td>
+      <td>3.326387e+04</td>
+      <td>1.970114e+05</td>
+      <td>1.148638e+05</td>
+      <td>7.003506e+04</td>
+      <td>2.960127e+04</td>
+      <td>1.424937e+04</td>
+      <td>2.480111e+05</td>
+      <td>3.513896e+04</td>
+      <td>3.220193e+04</td>
+      <td>2.646605e+04</td>
+      <td>1.064506e+04</td>
+      <td>1.247388e+05</td>
+      <td>2.794817e+05</td>
+    </tr>
+    <tr>
+      <th>Construction</th>
+      <td>1.226173e+04</td>
+      <td>8.096440e+03</td>
+      <td>9.764389e+03</td>
+      <td>5.785973e+03</td>
+      <td>6.481926e+03</td>
+      <td>3.329238e+04</td>
+      <td>1.292218e+04</td>
+      <td>2.070359e+04</td>
+      <td>7.796464e+03</td>
+      <td>3.542966e+03</td>
+      <td>1.839960e+04</td>
+      <td>5.524073e+05</td>
+      <td>1.158565e+04</td>
+      <td>1.344335e+04</td>
+      <td>1.001945e+04</td>
+      <td>2.094530e+05</td>
+      <td>3.113333e+05</td>
+    </tr>
+    <tr>
+      <th>Hotels, rest, gas st</th>
+      <td>1.585190e+05</td>
+      <td>1.161193e+05</td>
+      <td>2.891389e+05</td>
+      <td>1.094860e+05</td>
+      <td>1.393804e+05</td>
+      <td>3.954714e+05</td>
+      <td>2.374684e+05</td>
+      <td>4.069037e+05</td>
+      <td>1.451936e+05</td>
+      <td>6.475024e+04</td>
+      <td>9.418220e+04</td>
+      <td>3.131808e+05</td>
+      <td>3.092161e+05</td>
+      <td>3.441510e+05</td>
+      <td>9.445514e+04</td>
+      <td>6.998416e+05</td>
+      <td>8.361420e+05</td>
+    </tr>
+    <tr>
+      <th>Transport</th>
+      <td>8.360970e+04</td>
+      <td>5.956461e+04</td>
+      <td>1.873416e+05</td>
+      <td>5.879882e+04</td>
+      <td>9.905564e+04</td>
+      <td>2.550201e+05</td>
+      <td>1.553554e+05</td>
+      <td>2.120872e+05</td>
+      <td>8.163742e+04</td>
+      <td>4.699260e+04</td>
+      <td>5.864852e+04</td>
+      <td>2.547194e+05</td>
+      <td>1.461381e+05</td>
+      <td>1.004164e+06</td>
+      <td>5.825540e+04</td>
+      <td>3.787774e+05</td>
+      <td>5.608560e+05</td>
+    </tr>
+    <tr>
+      <th>Telecom</th>
+      <td>4.666899e+03</td>
+      <td>3.700545e+03</td>
+      <td>1.356248e+04</td>
+      <td>6.786358e+03</td>
+      <td>2.738445e+04</td>
+      <td>3.431287e+04</td>
+      <td>1.503706e+04</td>
+      <td>4.742263e+04</td>
+      <td>1.081735e+04</td>
+      <td>6.004707e+03</td>
+      <td>1.256687e+04</td>
+      <td>5.203203e+04</td>
+      <td>4.735413e+04</td>
+      <td>7.133910e+04</td>
+      <td>3.227717e+05</td>
+      <td>4.531841e+05</td>
+      <td>4.102567e+05</td>
+    </tr>
+    <tr>
+      <th>Business</th>
+      <td>2.319642e+05</td>
+      <td>7.776159e+04</td>
+      <td>3.230799e+05</td>
+      <td>1.219563e+05</td>
+      <td>2.051288e+05</td>
+      <td>6.339187e+05</td>
+      <td>2.551179e+05</td>
+      <td>6.592224e+05</td>
+      <td>3.228662e+05</td>
+      <td>9.127981e+04</td>
+      <td>1.101948e+05</td>
+      <td>8.199964e+05</td>
+      <td>2.626592e+05</td>
+      <td>2.510937e+05</td>
+      <td>1.150311e+05</td>
+      <td>4.378689e+06</td>
+      <td>2.792559e+06</td>
+    </tr>
+    <tr>
+      <th>Pub. ad., health, ed.</th>
+      <td>2.398994e+04</td>
+      <td>8.266055e+04</td>
+      <td>3.212698e+04</td>
+      <td>1.611984e+04</td>
+      <td>1.965874e+04</td>
+      <td>6.100786e+04</td>
+      <td>3.481416e+04</td>
+      <td>4.492505e+04</td>
+      <td>1.936629e+04</td>
+      <td>7.807682e+03</td>
+      <td>3.071162e+04</td>
+      <td>4.679120e+04</td>
+      <td>3.851089e+04</td>
+      <td>3.950654e+04</td>
+      <td>1.534963e+04</td>
+      <td>2.658097e+05</td>
+      <td>9.195558e+05</td>
+    </tr>
+    <tr>
+      <th>Taxes less subsidies on products purchased: Total</th>
+      <td>9.094403e+04</td>
+      <td>1.571670e+05</td>
+      <td>1.641738e+05</td>
+      <td>7.166317e+04</td>
+      <td>6.043804e+04</td>
+      <td>4.247564e+05</td>
+      <td>1.804357e+05</td>
+      <td>2.464016e+05</td>
+      <td>1.124483e+05</td>
+      <td>3.879237e+04</td>
+      <td>7.361576e+04</td>
+      <td>2.750111e+05</td>
+      <td>2.754920e+05</td>
+      <td>2.142376e+05</td>
+      <td>5.301765e+04</td>
+      <td>3.604163e+05</td>
+      <td>3.032797e+05</td>
+    </tr>
+    <tr>
+      <th>Other net taxes on production</th>
+      <td>5.272858e+03</td>
+      <td>1.079418e+05</td>
+      <td>-3.594434e+01</td>
+      <td>1.845872e+04</td>
+      <td>1.529532e+04</td>
+      <td>8.767850e+04</td>
+      <td>6.396118e+04</td>
+      <td>2.871939e+04</td>
+      <td>1.167416e+04</td>
+      <td>4.487268e+03</td>
+      <td>7.203976e+04</td>
+      <td>6.389290e+04</td>
+      <td>3.538742e+05</td>
+      <td>7.923784e+04</td>
+      <td>7.633084e+04</td>
+      <td>5.735303e+05</td>
+      <td>1.153492e+05</td>
+    </tr>
+    <tr>
+      <th>Taxes on products purchased</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Subsidies on products purchased</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Compensation of employees; wages, salaries, &amp; employers' social contributions: High-skilled</th>
+      <td>6.591788e+04</td>
+      <td>1.318168e+05</td>
+      <td>1.693269e+05</td>
+      <td>6.919738e+04</td>
+      <td>1.471608e+05</td>
+      <td>2.721205e+05</td>
+      <td>2.220416e+05</td>
+      <td>3.890259e+05</td>
+      <td>1.744489e+05</td>
+      <td>6.914830e+04</td>
+      <td>1.281319e+05</td>
+      <td>3.874417e+05</td>
+      <td>9.388687e+05</td>
+      <td>4.038867e+05</td>
+      <td>1.793879e+05</td>
+      <td>3.062913e+06</td>
+      <td>4.876681e+06</td>
+    </tr>
+    <tr>
+      <th>Compensation of employees; wages, salaries, &amp; employers' social contributions: Low-skilled</th>
+      <td>1.189300e+05</td>
+      <td>8.264645e+04</td>
+      <td>4.520512e+04</td>
+      <td>2.491889e+04</td>
+      <td>2.742028e+04</td>
+      <td>6.427456e+04</td>
+      <td>4.812394e+04</td>
+      <td>8.485364e+04</td>
+      <td>3.250175e+04</td>
+      <td>1.622956e+04</td>
+      <td>1.568800e+04</td>
+      <td>2.816352e+05</td>
+      <td>2.758475e+05</td>
+      <td>1.237620e+05</td>
+      <td>4.884234e+04</td>
+      <td>2.653186e+05</td>
+      <td>3.792340e+05</td>
+    </tr>
+    <tr>
+      <th>Compensation of employees; wages, salaries, &amp; employers' social contributions: Medium-skilled</th>
+      <td>6.809301e+05</td>
+      <td>3.627571e+05</td>
+      <td>3.093759e+05</td>
+      <td>1.947439e+05</td>
+      <td>2.359481e+05</td>
+      <td>5.261805e+05</td>
+      <td>4.145212e+05</td>
+      <td>7.390123e+05</td>
+      <td>3.051768e+05</td>
+      <td>1.396844e+05</td>
+      <td>1.611657e+05</td>
+      <td>1.170899e+06</td>
+      <td>2.414096e+06</td>
+      <td>9.826135e+05</td>
+      <td>4.957318e+05</td>
+      <td>1.605018e+06</td>
+      <td>2.452847e+06</td>
+    </tr>
+    <tr>
+      <th>Compensation of employees; wages, salaries, &amp; employers' social contributions: Total</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Operating surplus: Consumption of fixed capital</th>
+      <td>2.393865e+05</td>
+      <td>3.818768e+05</td>
+      <td>1.431324e+05</td>
+      <td>6.295558e+04</td>
+      <td>9.992601e+04</td>
+      <td>4.529489e+05</td>
+      <td>2.579115e+05</td>
+      <td>3.783884e+05</td>
+      <td>1.454335e+05</td>
+      <td>5.600238e+04</td>
+      <td>4.285607e+05</td>
+      <td>4.730012e+05</td>
+      <td>6.394493e+05</td>
+      <td>4.921935e+05</td>
+      <td>4.326180e+05</td>
+      <td>2.657379e+06</td>
+      <td>1.438234e+06</td>
+    </tr>
+    <tr>
+      <th>Operating surplus: Rents on land</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Operating surplus: Royalties on resources</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Operating surplus: Remaining net operating surplus</th>
+      <td>6.635880e+05</td>
+      <td>9.277311e+05</td>
+      <td>3.821317e+05</td>
+      <td>8.929976e+04</td>
+      <td>1.794872e+05</td>
+      <td>6.002788e+05</td>
+      <td>2.872875e+05</td>
+      <td>4.265206e+05</td>
+      <td>1.635364e+05</td>
+      <td>1.462355e+05</td>
+      <td>2.074210e+05</td>
+      <td>4.963698e+05</td>
+      <td>1.451684e+06</td>
+      <td>4.701656e+05</td>
+      <td>3.295328e+05</td>
+      <td>4.267086e+06</td>
+      <td>8.425492e+05</td>
+    </tr>
+    <tr>
+      <th>Employment: Low-skilled male</th>
+      <td>1.373127e+05</td>
+      <td>1.786508e+04</td>
+      <td>2.219046e+04</td>
+      <td>4.313014e+03</td>
+      <td>3.800969e+03</td>
+      <td>1.370296e+04</td>
+      <td>1.129129e+04</td>
+      <td>1.092377e+04</td>
+      <td>5.427234e+03</td>
+      <td>3.082575e+03</td>
+      <td>4.273605e+03</td>
+      <td>5.308432e+04</td>
+      <td>3.383722e+04</td>
+      <td>1.629888e+04</td>
+      <td>3.863192e+03</td>
+      <td>2.116744e+04</td>
+      <td>3.493528e+04</td>
+    </tr>
+    <tr>
+      <th>Employment: Low-skilled female</th>
+      <td>7.385012e+04</td>
+      <td>4.896027e+03</td>
+      <td>1.283658e+04</td>
+      <td>3.509757e+03</td>
+      <td>1.647125e+03</td>
+      <td>4.800602e+03</td>
+      <td>2.407948e+03</td>
+      <td>5.868365e+03</td>
+      <td>1.253581e+03</td>
+      <td>1.141698e+03</td>
+      <td>1.662882e+03</td>
+      <td>5.753979e+03</td>
+      <td>2.276948e+04</td>
+      <td>2.593708e+03</td>
+      <td>1.168598e+03</td>
+      <td>1.469065e+04</td>
+      <td>3.844272e+04</td>
+    </tr>
+    <tr>
+      <th>Employment: Medium-skilled male</th>
+      <td>4.607112e+05</td>
+      <td>3.631629e+04</td>
+      <td>4.773367e+04</td>
+      <td>2.083643e+04</td>
+      <td>1.886535e+04</td>
+      <td>5.601489e+04</td>
+      <td>4.926821e+04</td>
+      <td>5.894433e+04</td>
+      <td>2.978866e+04</td>
+      <td>1.596509e+04</td>
+      <td>1.310252e+04</td>
+      <td>9.939685e+04</td>
+      <td>1.247512e+05</td>
+      <td>7.367511e+04</td>
+      <td>2.060091e+04</td>
+      <td>6.474947e+04</td>
+      <td>1.011131e+05</td>
+    </tr>
+    <tr>
+      <th>Employment: Medium-skilled female</th>
+      <td>2.422219e+05</td>
+      <td>1.532956e+04</td>
+      <td>2.683554e+04</td>
+      <td>1.820253e+04</td>
+      <td>6.883588e+03</td>
+      <td>1.718941e+04</td>
+      <td>9.537030e+03</td>
+      <td>3.002289e+04</td>
+      <td>5.748383e+03</td>
+      <td>5.524016e+03</td>
+      <td>4.623586e+03</td>
+      <td>1.232851e+04</td>
+      <td>1.219723e+05</td>
+      <td>1.228402e+04</td>
+      <td>5.598152e+03</td>
+      <td>4.778650e+04</td>
+      <td>8.615605e+04</td>
+    </tr>
+    <tr>
+      <th>Employment: High-skilled male</th>
+      <td>1.190478e+04</td>
+      <td>5.790561e+03</td>
+      <td>7.060084e+03</td>
+      <td>2.767478e+03</td>
+      <td>3.654906e+03</td>
+      <td>8.976899e+03</td>
+      <td>8.345893e+03</td>
+      <td>1.030559e+04</td>
+      <td>5.315261e+03</td>
+      <td>2.805321e+03</td>
+      <td>4.659648e+03</td>
+      <td>1.439439e+04</td>
+      <td>2.548440e+04</td>
+      <td>1.154539e+04</td>
+      <td>3.742000e+03</td>
+      <td>5.804858e+04</td>
+      <td>1.172219e+05</td>
+    </tr>
+    <tr>
+      <th>Employment: High-skilled female</th>
+      <td>3.771565e+03</td>
+      <td>1.638564e+03</td>
+      <td>3.218874e+03</td>
+      <td>1.868272e+03</td>
+      <td>1.212535e+03</td>
+      <td>2.218463e+03</td>
+      <td>1.406768e+03</td>
+      <td>3.025247e+03</td>
+      <td>1.013748e+03</td>
+      <td>8.168374e+02</td>
+      <td>1.186036e+03</td>
+      <td>4.711872e+03</td>
+      <td>1.661244e+04</td>
+      <td>4.124347e+03</td>
+      <td>2.570358e+03</td>
+      <td>3.565456e+04</td>
+      <td>1.291303e+05</td>
+    </tr>
+    <tr>
+      <th>Employment hours: Low-skilled male</th>
+      <td>2.991473e+05</td>
+      <td>4.161499e+04</td>
+      <td>5.097882e+04</td>
+      <td>1.027964e+04</td>
+      <td>8.661426e+03</td>
+      <td>3.200710e+04</td>
+      <td>2.638192e+04</td>
+      <td>2.544594e+04</td>
+      <td>1.247096e+04</td>
+      <td>7.077222e+03</td>
+      <td>9.564009e+03</td>
+      <td>1.263145e+05</td>
+      <td>8.022140e+04</td>
+      <td>3.771502e+04</td>
+      <td>8.582233e+03</td>
+      <td>4.660291e+04</td>
+      <td>7.593104e+04</td>
+    </tr>
+    <tr>
+      <th>Employment hours: Low-skilled female</th>
+      <td>1.607892e+05</td>
+      <td>1.131659e+04</td>
+      <td>2.931861e+04</td>
+      <td>8.214187e+03</td>
+      <td>3.648542e+03</td>
+      <td>1.098547e+04</td>
+      <td>5.474736e+03</td>
+      <td>1.360165e+04</td>
+      <td>2.769224e+03</td>
+      <td>2.520431e+03</td>
+      <td>3.679438e+03</td>
+      <td>1.344137e+04</td>
+      <td>5.198433e+04</td>
+      <td>5.784548e+03</td>
+      <td>2.484291e+03</td>
+      <td>3.028918e+04</td>
+      <td>7.730076e+04</td>
+    </tr>
+    <tr>
+      <th>Employment hours: Medium-skilled male</th>
+      <td>9.255911e+05</td>
+      <td>8.308300e+04</td>
+      <td>1.036807e+05</td>
+      <td>4.951801e+04</td>
+      <td>4.217871e+04</td>
+      <td>1.292700e+05</td>
+      <td>1.139697e+05</td>
+      <td>1.356157e+05</td>
+      <td>6.749327e+04</td>
+      <td>3.612775e+04</td>
+      <td>2.691945e+04</td>
+      <td>2.205786e+05</td>
+      <td>2.845168e+05</td>
+      <td>1.679401e+05</td>
+      <td>4.451681e+04</td>
+      <td>1.394293e+05</td>
+      <td>2.196806e+05</td>
+    </tr>
+    <tr>
+      <th>Employment hours: Medium-skilled female</th>
+      <td>4.781629e+05</td>
+      <td>3.528831e+04</td>
+      <td>5.761498e+04</td>
+      <td>4.267112e+04</td>
+      <td>1.504199e+04</td>
+      <td>3.883001e+04</td>
+      <td>2.156748e+04</td>
+      <td>6.984587e+04</td>
+      <td>1.259505e+04</td>
+      <td>1.215486e+04</td>
+      <td>9.252237e+03</td>
+      <td>2.643071e+04</td>
+      <td>2.735216e+05</td>
+      <td>2.731919e+04</td>
+      <td>1.166144e+04</td>
+      <td>9.845315e+04</td>
+      <td>1.679308e+05</td>
+    </tr>
+    <tr>
+      <th>Employment hours: High-skilled male</th>
+      <td>2.593795e+04</td>
+      <td>1.327021e+04</td>
+      <td>1.547095e+04</td>
+      <td>6.377052e+03</td>
+      <td>7.862100e+03</td>
+      <td>1.984418e+04</td>
+      <td>1.856939e+04</td>
+      <td>2.242382e+04</td>
+      <td>1.128829e+04</td>
+      <td>5.756538e+03</td>
+      <td>9.771128e+03</td>
+      <td>3.153460e+04</td>
+      <td>5.402114e+04</td>
+      <td>2.492383e+04</td>
+      <td>7.807786e+03</td>
+      <td>1.196906e+05</td>
+      <td>2.481296e+05</td>
+    </tr>
+    <tr>
+      <th>Employment hours: High-skilled female</th>
+      <td>8.229411e+03</td>
+      <td>3.647592e+03</td>
+      <td>6.744051e+03</td>
+      <td>4.029219e+03</td>
+      <td>2.493899e+03</td>
+      <td>4.622909e+03</td>
+      <td>2.999663e+03</td>
+      <td>6.394217e+03</td>
+      <td>2.045487e+03</td>
+      <td>1.535209e+03</td>
+      <td>2.377958e+03</td>
+      <td>1.045777e+04</td>
+      <td>3.312122e+04</td>
+      <td>8.698381e+03</td>
+      <td>5.390384e+03</td>
+      <td>7.112155e+04</td>
+      <td>2.508670e+05</td>
+    </tr>
+    <tr>
+      <th>Employment: Vulnerable employment</th>
+      <td>7.122507e+05</td>
+      <td>2.763587e+04</td>
+      <td>3.923575e+04</td>
+      <td>2.552029e+04</td>
+      <td>1.158679e+04</td>
+      <td>4.276755e+04</td>
+      <td>3.036037e+04</td>
+      <td>4.506713e+04</td>
+      <td>1.608225e+04</td>
+      <td>1.192096e+04</td>
+      <td>8.655764e+03</td>
+      <td>9.043871e+04</td>
+      <td>1.611353e+05</td>
+      <td>5.026157e+04</td>
+      <td>1.142677e+04</td>
+      <td>6.738022e+04</td>
+      <td>1.420209e+05</td>
+    </tr>
+    <tr>
+      <th>Employment hours: Vulnerable employment</th>
+      <td>1.424632e+06</td>
+      <td>6.411472e+04</td>
+      <td>8.301241e+04</td>
+      <td>6.151447e+04</td>
+      <td>2.605984e+04</td>
+      <td>1.008908e+05</td>
+      <td>7.198021e+04</td>
+      <td>1.074994e+05</td>
+      <td>3.769862e+04</td>
+      <td>2.827007e+04</td>
+      <td>1.768445e+04</td>
+      <td>2.114095e+05</td>
+      <td>3.955899e+05</td>
+      <td>1.177731e+05</td>
+      <td>2.573255e+04</td>
+      <td>1.461578e+05</td>
+      <td>3.208501e+05</td>
+    </tr>
+    <tr>
+      <th>Total_Output</th>
+      <td>8.243476e+06</td>
+      <td>3.355525e+06</td>
+      <td>4.679114e+06</td>
+      <td>2.021246e+06</td>
+      <td>2.149589e+06</td>
+      <td>8.202839e+06</td>
+      <td>5.246569e+06</td>
+      <td>7.866732e+06</td>
+      <td>3.908597e+06</td>
+      <td>1.348175e+06</td>
+      <td>2.146693e+06</td>
+      <td>8.673585e+06</td>
+      <td>9.421311e+06</td>
+      <td>5.525606e+06</td>
+      <td>2.454540e+06</td>
+      <td>2.106681e+07</td>
+      <td>2.059771e+07</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#get technical coefficients for Value added table </span>
+<span class="n">T_V</span> <span class="o">=</span> <span class="n">V</span><span class="o">/</span><span class="n">X</span>
+<span class="n">T_V</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Agriculture, hunting, forestry &amp; fishing</th>
+      <th>Mining &amp; quarrying</th>
+      <th>Food production, beverages &amp; tobacco</th>
+      <th>Textiles, leather &amp; wearing apparel</th>
+      <th>Wood, paper &amp; publishing</th>
+      <th>Petroleum, chemicals &amp; non-metallic mineral products</th>
+      <th>Metal &amp; metal products</th>
+      <th>Electrical &amp; machinery</th>
+      <th>Transport equipment</th>
+      <th>Manufacturing &amp; recycling</th>
+      <th>Electricity, gas &amp; water</th>
+      <th>Construction</th>
+      <th>Sale, maintenance &amp; repair of vehicles; fuel; trade; hotels &amp; restaurants</th>
+      <th>Transport</th>
+      <th>Post &amp; telecommunications</th>
+      <th>Financial intermediation &amp; business activity</th>
+      <th>Public administration; education; health; recreation; other services</th>
+    </tr>
+    <tr>
+      <th>Unnamed: 1</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Taxes less subsidies on products purchased: Total</th>
+      <td>0.027736</td>
+      <td>0.052499</td>
+      <td>0.039340</td>
+      <td>0.040680</td>
+      <td>0.030280</td>
+      <td>0.055015</td>
+      <td>0.037028</td>
+      <td>0.033653</td>
+      <td>0.030411</td>
+      <td>0.031968</td>
+      <td>0.036277</td>
+      <td>0.035470</td>
+      <td>0.035585</td>
+      <td>0.043152</td>
+      <td>0.023057</td>
+      <td>0.017926</td>
+      <td>0.016316</td>
+    </tr>
+    <tr>
+      <th>Other net taxes on production</th>
+      <td>0.001608</td>
+      <td>0.036056</td>
+      <td>-0.000009</td>
+      <td>0.010478</td>
+      <td>0.007663</td>
+      <td>0.011356</td>
+      <td>0.013126</td>
+      <td>0.003922</td>
+      <td>0.003157</td>
+      <td>0.003698</td>
+      <td>0.035500</td>
+      <td>0.008241</td>
+      <td>0.045710</td>
+      <td>0.015960</td>
+      <td>0.033196</td>
+      <td>0.028526</td>
+      <td>0.006206</td>
+    </tr>
+    <tr>
+      <th>Taxes on products purchased</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Subsidies on products purchased</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Compensation of employees; wages, salaries, &amp; employers' social contributions: High-skilled</th>
+      <td>0.020103</td>
+      <td>0.044031</td>
+      <td>0.040575</td>
+      <td>0.039280</td>
+      <td>0.073728</td>
+      <td>0.035245</td>
+      <td>0.045566</td>
+      <td>0.053133</td>
+      <td>0.047179</td>
+      <td>0.056984</td>
+      <td>0.063142</td>
+      <td>0.049971</td>
+      <td>0.121273</td>
+      <td>0.081352</td>
+      <td>0.078015</td>
+      <td>0.152341</td>
+      <td>0.262356</td>
+    </tr>
+    <tr>
+      <th>Compensation of employees; wages, salaries, &amp; employers' social contributions: Low-skilled</th>
+      <td>0.036271</td>
+      <td>0.027607</td>
+      <td>0.010832</td>
+      <td>0.014145</td>
+      <td>0.013738</td>
+      <td>0.008325</td>
+      <td>0.009876</td>
+      <td>0.011589</td>
+      <td>0.008790</td>
+      <td>0.013374</td>
+      <td>0.007731</td>
+      <td>0.036325</td>
+      <td>0.035631</td>
+      <td>0.024929</td>
+      <td>0.021241</td>
+      <td>0.013196</td>
+      <td>0.020402</td>
+    </tr>
+    <tr>
+      <th>Compensation of employees; wages, salaries, &amp; employers' social contributions: Medium-skilled</th>
+      <td>0.207666</td>
+      <td>0.121173</td>
+      <td>0.074134</td>
+      <td>0.110548</td>
+      <td>0.118211</td>
+      <td>0.068152</td>
+      <td>0.085065</td>
+      <td>0.100934</td>
+      <td>0.082534</td>
+      <td>0.115111</td>
+      <td>0.079420</td>
+      <td>0.151019</td>
+      <td>0.311827</td>
+      <td>0.197921</td>
+      <td>0.215592</td>
+      <td>0.079829</td>
+      <td>0.131959</td>
+    </tr>
+    <tr>
+      <th>Compensation of employees; wages, salaries, &amp; employers' social contributions: Total</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Operating surplus: Consumption of fixed capital</th>
+      <td>0.073007</td>
+      <td>0.127559</td>
+      <td>0.034298</td>
+      <td>0.035737</td>
+      <td>0.050063</td>
+      <td>0.058667</td>
+      <td>0.052927</td>
+      <td>0.051680</td>
+      <td>0.039332</td>
+      <td>0.046150</td>
+      <td>0.211189</td>
+      <td>0.061006</td>
+      <td>0.082597</td>
+      <td>0.099139</td>
+      <td>0.188144</td>
+      <td>0.132171</td>
+      <td>0.077374</td>
+    </tr>
+    <tr>
+      <th>Operating surplus: Rents on land</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Operating surplus: Royalties on resources</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Operating surplus: Remaining net operating surplus</th>
+      <td>0.202377</td>
+      <td>0.309893</td>
+      <td>0.091568</td>
+      <td>0.050692</td>
+      <td>0.089924</td>
+      <td>0.077749</td>
+      <td>0.058955</td>
+      <td>0.058254</td>
+      <td>0.044228</td>
+      <td>0.120510</td>
+      <td>0.102214</td>
+      <td>0.064020</td>
+      <td>0.187513</td>
+      <td>0.094702</td>
+      <td>0.143313</td>
+      <td>0.212234</td>
+      <td>0.045328</td>
+    </tr>
+    <tr>
+      <th>Employment: Low-skilled male</th>
+      <td>0.041877</td>
+      <td>0.005968</td>
+      <td>0.005317</td>
+      <td>0.002448</td>
+      <td>0.001904</td>
+      <td>0.001775</td>
+      <td>0.002317</td>
+      <td>0.001492</td>
+      <td>0.001468</td>
+      <td>0.002540</td>
+      <td>0.002106</td>
+      <td>0.006847</td>
+      <td>0.004371</td>
+      <td>0.003283</td>
+      <td>0.001680</td>
+      <td>0.001053</td>
+      <td>0.001879</td>
+    </tr>
+    <tr>
+      <th>Employment: Low-skilled female</th>
+      <td>0.022522</td>
+      <td>0.001635</td>
+      <td>0.003076</td>
+      <td>0.001992</td>
+      <td>0.000825</td>
+      <td>0.000622</td>
+      <td>0.000494</td>
+      <td>0.000801</td>
+      <td>0.000339</td>
+      <td>0.000941</td>
+      <td>0.000819</td>
+      <td>0.000742</td>
+      <td>0.002941</td>
+      <td>0.000522</td>
+      <td>0.000508</td>
+      <td>0.000731</td>
+      <td>0.002068</td>
+    </tr>
+    <tr>
+      <th>Employment: Medium-skilled male</th>
+      <td>0.140505</td>
+      <td>0.012131</td>
+      <td>0.011438</td>
+      <td>0.011828</td>
+      <td>0.009452</td>
+      <td>0.007255</td>
+      <td>0.010110</td>
+      <td>0.008051</td>
+      <td>0.008056</td>
+      <td>0.013156</td>
+      <td>0.006457</td>
+      <td>0.012820</td>
+      <td>0.016114</td>
+      <td>0.014840</td>
+      <td>0.008959</td>
+      <td>0.003220</td>
+      <td>0.005440</td>
+    </tr>
+    <tr>
+      <th>Employment: Medium-skilled female</th>
+      <td>0.073872</td>
+      <td>0.005121</td>
+      <td>0.006430</td>
+      <td>0.010333</td>
+      <td>0.003449</td>
+      <td>0.002226</td>
+      <td>0.001957</td>
+      <td>0.004101</td>
+      <td>0.001555</td>
+      <td>0.004552</td>
+      <td>0.002278</td>
+      <td>0.001590</td>
+      <td>0.015755</td>
+      <td>0.002474</td>
+      <td>0.002435</td>
+      <td>0.002377</td>
+      <td>0.004635</td>
+    </tr>
+    <tr>
+      <th>Employment: High-skilled male</th>
+      <td>0.003631</td>
+      <td>0.001934</td>
+      <td>0.001692</td>
+      <td>0.001571</td>
+      <td>0.001831</td>
+      <td>0.001163</td>
+      <td>0.001713</td>
+      <td>0.001408</td>
+      <td>0.001437</td>
+      <td>0.002312</td>
+      <td>0.002296</td>
+      <td>0.001857</td>
+      <td>0.003292</td>
+      <td>0.002326</td>
+      <td>0.001627</td>
+      <td>0.002887</td>
+      <td>0.006306</td>
+    </tr>
+    <tr>
+      <th>Employment: High-skilled female</th>
+      <td>0.001150</td>
+      <td>0.000547</td>
+      <td>0.000771</td>
+      <td>0.001061</td>
+      <td>0.000607</td>
+      <td>0.000287</td>
+      <td>0.000289</td>
+      <td>0.000413</td>
+      <td>0.000274</td>
+      <td>0.000673</td>
+      <td>0.000584</td>
+      <td>0.000608</td>
+      <td>0.002146</td>
+      <td>0.000831</td>
+      <td>0.001118</td>
+      <td>0.001773</td>
+      <td>0.006947</td>
+    </tr>
+    <tr>
+      <th>Employment hours: Low-skilled male</th>
+      <td>0.091232</td>
+      <td>0.013901</td>
+      <td>0.012216</td>
+      <td>0.005835</td>
+      <td>0.004339</td>
+      <td>0.004146</td>
+      <td>0.005414</td>
+      <td>0.003475</td>
+      <td>0.003373</td>
+      <td>0.005832</td>
+      <td>0.004713</td>
+      <td>0.016292</td>
+      <td>0.010362</td>
+      <td>0.007597</td>
+      <td>0.003732</td>
+      <td>0.002318</td>
+      <td>0.004085</td>
+    </tr>
+    <tr>
+      <th>Employment hours: Low-skilled female</th>
+      <td>0.049037</td>
+      <td>0.003780</td>
+      <td>0.007025</td>
+      <td>0.004663</td>
+      <td>0.001828</td>
+      <td>0.001423</td>
+      <td>0.001123</td>
+      <td>0.001858</td>
+      <td>0.000749</td>
+      <td>0.002077</td>
+      <td>0.001813</td>
+      <td>0.001734</td>
+      <td>0.006715</td>
+      <td>0.001165</td>
+      <td>0.001080</td>
+      <td>0.001507</td>
+      <td>0.004159</td>
+    </tr>
+    <tr>
+      <th>Employment hours: Medium-skilled male</th>
+      <td>0.282282</td>
+      <td>0.027752</td>
+      <td>0.024845</td>
+      <td>0.028109</td>
+      <td>0.021132</td>
+      <td>0.016743</td>
+      <td>0.023388</td>
+      <td>0.018522</td>
+      <td>0.018253</td>
+      <td>0.029772</td>
+      <td>0.013266</td>
+      <td>0.028450</td>
+      <td>0.036751</td>
+      <td>0.033827</td>
+      <td>0.019360</td>
+      <td>0.006935</td>
+      <td>0.011818</td>
+    </tr>
+    <tr>
+      <th>Employment hours: Medium-skilled female</th>
+      <td>0.145827</td>
+      <td>0.011787</td>
+      <td>0.013806</td>
+      <td>0.024223</td>
+      <td>0.007536</td>
+      <td>0.005029</td>
+      <td>0.004426</td>
+      <td>0.009540</td>
+      <td>0.003406</td>
+      <td>0.010017</td>
+      <td>0.004559</td>
+      <td>0.003409</td>
+      <td>0.035331</td>
+      <td>0.005503</td>
+      <td>0.005072</td>
+      <td>0.004897</td>
+      <td>0.009034</td>
+    </tr>
+    <tr>
+      <th>Employment hours: High-skilled male</th>
+      <td>0.007910</td>
+      <td>0.004433</td>
+      <td>0.003707</td>
+      <td>0.003620</td>
+      <td>0.003939</td>
+      <td>0.002570</td>
+      <td>0.003811</td>
+      <td>0.003063</td>
+      <td>0.003053</td>
+      <td>0.004744</td>
+      <td>0.004815</td>
+      <td>0.004067</td>
+      <td>0.006978</td>
+      <td>0.005020</td>
+      <td>0.003396</td>
+      <td>0.005953</td>
+      <td>0.013349</td>
+    </tr>
+    <tr>
+      <th>Employment hours: High-skilled female</th>
+      <td>0.002510</td>
+      <td>0.001218</td>
+      <td>0.001616</td>
+      <td>0.002287</td>
+      <td>0.001249</td>
+      <td>0.000599</td>
+      <td>0.000616</td>
+      <td>0.000873</td>
+      <td>0.000553</td>
+      <td>0.001265</td>
+      <td>0.001172</td>
+      <td>0.001349</td>
+      <td>0.004278</td>
+      <td>0.001752</td>
+      <td>0.002344</td>
+      <td>0.003537</td>
+      <td>0.013496</td>
+    </tr>
+    <tr>
+      <th>Employment: Vulnerable employment</th>
+      <td>0.217218</td>
+      <td>0.009231</td>
+      <td>0.009402</td>
+      <td>0.014487</td>
+      <td>0.005805</td>
+      <td>0.005539</td>
+      <td>0.006230</td>
+      <td>0.006155</td>
+      <td>0.004349</td>
+      <td>0.009824</td>
+      <td>0.004265</td>
+      <td>0.011665</td>
+      <td>0.020814</td>
+      <td>0.010124</td>
+      <td>0.004969</td>
+      <td>0.003351</td>
+      <td>0.007640</td>
+    </tr>
+    <tr>
+      <th>Employment hours: Vulnerable employment</th>
+      <td>0.434477</td>
+      <td>0.021416</td>
+      <td>0.019892</td>
+      <td>0.034919</td>
+      <td>0.013056</td>
+      <td>0.013068</td>
+      <td>0.014771</td>
+      <td>0.014682</td>
+      <td>0.010195</td>
+      <td>0.023297</td>
+      <td>0.008715</td>
+      <td>0.027267</td>
+      <td>0.051098</td>
+      <td>0.023722</td>
+      <td>0.011191</td>
+      <td>0.007270</td>
+      <td>0.017261</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Get technical coefficients for enviornmental extensions table </span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">F</span><span class="o">/</span><span class="n">X</span>
+<span class="n">S</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Agriculture, hunting, forestry &amp; fishing</th>
+      <th>Mining &amp; quarrying</th>
+      <th>Food production, beverages &amp; tobacco</th>
+      <th>Textiles, leather &amp; wearing apparel</th>
+      <th>Wood, paper &amp; publishing</th>
+      <th>Petroleum, chemicals &amp; non-metallic mineral products</th>
+      <th>Metal &amp; metal products</th>
+      <th>Electrical &amp; machinery</th>
+      <th>Transport equipment</th>
+      <th>Manufacturing &amp; recycling</th>
+      <th>Electricity, gas &amp; water</th>
+      <th>Construction</th>
+      <th>Sale, maintenance &amp; repair of vehicles; fuel; trade; hotels &amp; restaurants</th>
+      <th>Transport</th>
+      <th>Post &amp; telecommunications</th>
+      <th>Financial intermediation &amp; business activity</th>
+      <th>Public administration; education; health; recreation; other services</th>
+    </tr>
+    <tr>
+      <th>Unnamed: 1</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CO2 - combustion - air</th>
+      <td>150628.072342</td>
+      <td>482103.978324</td>
+      <td>78505.525193</td>
+      <td>59613.039657</td>
+      <td>114347.296145</td>
+      <td>424043.680482</td>
+      <td>408918.564299</td>
+      <td>67932.061179</td>
+      <td>33010.986503</td>
+      <td>318907.778532</td>
+      <td>5.882515e+06</td>
+      <td>143141.892109</td>
+      <td>100158.436481</td>
+      <td>439465.273199</td>
+      <td>34717.239834</td>
+      <td>38798.568395</td>
+      <td>44837.523479</td>
+    </tr>
+    <tr>
+      <th>CH4 - combustion - air</th>
+      <td>29.023668</td>
+      <td>255.687046</td>
+      <td>26.232255</td>
+      <td>13.908408</td>
+      <td>41.408928</td>
+      <td>110.819882</td>
+      <td>83.706846</td>
+      <td>21.781273</td>
+      <td>9.207314</td>
+      <td>93.943512</td>
+      <td>8.711385e+02</td>
+      <td>16.047149</td>
+      <td>26.464776</td>
+      <td>42.569256</td>
+      <td>12.302781</td>
+      <td>15.982754</td>
+      <td>42.607517</td>
+    </tr>
+    <tr>
+      <th>N2O - combustion - air</th>
+      <td>4.997401</td>
+      <td>5.158589</td>
+      <td>1.950960</td>
+      <td>0.825967</td>
+      <td>7.276022</td>
+      <td>4.448856</td>
+      <td>2.759644</td>
+      <td>1.138282</td>
+      <td>0.520619</td>
+      <td>9.349252</td>
+      <td>1.308020e+02</td>
+      <td>2.836357</td>
+      <td>2.260587</td>
+      <td>9.806746</td>
+      <td>0.528864</td>
+      <td>0.589472</td>
+      <td>0.584154</td>
+    </tr>
+    <tr>
+      <th>SOx - combustion - air</th>
+      <td>220.382910</td>
+      <td>947.465311</td>
+      <td>177.092547</td>
+      <td>184.420865</td>
+      <td>323.409691</td>
+      <td>1200.168128</td>
+      <td>912.050235</td>
+      <td>155.301324</td>
+      <td>68.186749</td>
+      <td>976.292207</td>
+      <td>1.650234e+04</td>
+      <td>55.529367</td>
+      <td>26.174006</td>
+      <td>1493.236486</td>
+      <td>26.924079</td>
+      <td>44.445875</td>
+      <td>66.458014</td>
+    </tr>
+    <tr>
+      <th>NOx - combustion - air</th>
+      <td>1584.072001</td>
+      <td>893.010228</td>
+      <td>216.287806</td>
+      <td>146.289667</td>
+      <td>394.877383</td>
+      <td>799.208586</td>
+      <td>497.177454</td>
+      <td>173.455985</td>
+      <td>134.967270</td>
+      <td>858.082425</td>
+      <td>9.159519e+03</td>
+      <td>582.830762</td>
+      <td>422.920331</td>
+      <td>4093.468861</td>
+      <td>84.927232</td>
+      <td>97.975675</td>
+      <td>65.189446</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>Water Withdrawal Blue - Electricity - once-through - Electricity by solar thermal</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Water Withdrawal Blue - Electricity - once-through - Electricity by tide, wave, ocean</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Water Withdrawal Blue - Electricity - once-through - Electricity by Geothermal</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>2.326197e-03</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Water Withdrawal Blue - Electricity - once-through - Electricity nec</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Water Withdrawal Blue - Domestic - domestic Water Withdrawal Blue</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>1304 rows × 17 columns</p>
+</div></div></div>
+</div>
+<p>What was the per capita expenditure for electricity, gas and water, given that we were ca.7 billion people on the planet in 2011?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Get Final consumer demand expenditure by houshold for electricity water and gas </span>
+<span class="c1">#and then divide it by 7000 (remember that these numbers are in millions)</span>
+
+<span class="c1">#Select 11th row in matrix Y</span>
+<span class="n">Final_household</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">Final_household</span> <span class="o">=</span> <span class="n">Final_household</span><span class="p">[</span><span class="s2">&quot;Final consumption expenditure by households&quot;</span><span class="p">]</span>
+<span class="n">Popullation</span> <span class="o">=</span> <span class="mi">7000</span> <span class="c1">#in millions</span>
+
+<span class="c1">#Calculate expenditure per capita by deviding on 7000 </span>
+<span class="n">PerCaptia</span> <span class="o">=</span> <span class="n">Final_household</span><span class="o">/</span><span class="n">Popullation</span>
+<span class="n">PerCaptia</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>93.73429937976354
+</pre></div>
+</div>
+</div>
+</div>
+<p>What were the CO2 emissions from combustion per unit output from each of the sectors? What sector did have the highest expenditure for electricity, gas and water per unit output?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create a Data frame with total emissions by industry by unit of output</span>
+
+<span class="c1">#Now that we have the technical coefficient matrix all we need to do is locate the row of C02 emirriosn from combustion </span>
+<span class="c1">#In the S matrix (coefficients for enviornmental extensions)</span>
+<span class="n">Array</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;CO2 - combustion - air&#39;</span><span class="p">]</span>
+<span class="n">Array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agriculture, hunting, forestry &amp; fishing                                     1.506281e+05
+Mining &amp; quarrying                                                           4.821040e+05
+Food production, beverages &amp; tobacco                                         7.850553e+04
+Textiles, leather &amp; wearing apparel                                          5.961304e+04
+Wood, paper &amp; publishing                                                     1.143473e+05
+Petroleum, chemicals &amp; non-metallic mineral products                         4.240437e+05
+Metal &amp; metal products                                                       4.089186e+05
+Electrical &amp; machinery                                                       6.793206e+04
+Transport equipment                                                          3.301099e+04
+Manufacturing &amp; recycling                                                    3.189078e+05
+Electricity, gas &amp; water                                                     5.882515e+06
+Construction                                                                 1.431419e+05
+Sale, maintenance &amp; repair of vehicles; fuel; trade; hotels &amp; restaurants    1.001584e+05
+Transport                                                                    4.394653e+05
+Post &amp; telecommunications                                                    3.471724e+04
+Financial intermediation &amp; business activity                                 3.879857e+04
+Public administration; education; health; recreation; other services         4.483752e+04
+Name: CO2 - combustion - air, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/PS3_15_1.png" src="_images/PS3_15_1.png" />
+</div>
+</div>
+<p>Calculate the carbon footprint of all products in final consumption. Develop a figure that shows the total carbon footprint for all the 17 products, i.e. per product.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#since we are looking for the total figure and not the per unit figure we will look in the F matrix</span>
+
+<span class="c1">#Start of by creating a Total row </span>
+<span class="n">F</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Carbon_Footprint&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1">#Then we can plot this row</span>
+<span class="n">F</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Carbon_Footprint&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/PS3_17_1.png" src="_images/PS3_17_1.png" />
+</div>
+</div>
+<p>What was the carbon footprint of different final consumers, i.e. different columns in the Y matrix?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#we will look in the Y matrix</span>
+
+<span class="c1">#Start of by creating a Total row </span>
+<span class="n">Y</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Carbon_Footprint&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1">#Then we can plot this row</span>
+<span class="n">Y</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Carbon_Footprint&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/PS3_19_1.png" src="_images/PS3_19_1.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Lecture_4.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lecture 4 - Leontief Price Model</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
