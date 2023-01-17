@@ -1,7 +1,7 @@
 # <b> Welcome to TEP4222! </b>
 
 <p>
-<b>Course: TEP4222:  Input-Output Analysis, Trade and Environment</b> 
+<b>Input-Output Analysis, Trade and Environment</b> 
 <p>
 
 <p>
