@@ -14,7 +14,3 @@ import pandas as pd
 #Check which version you are using
 print(pd.__version__)
 
-
-# 
-
-# 

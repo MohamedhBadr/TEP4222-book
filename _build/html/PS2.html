@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Problem Set 2 - The Industry and Final Demand Balances &#8212; My sample book</title>
+    <title>Problem Set 2 - The Industry and Final Demand Balances &#8212; TEP4222 - Input-Output Analysis, Trade and Environment</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Lecture 4 - Leontief Price Model" href="Lecture_4.html" />
+    <link rel="next" title="Lecture 3 - Symmetric input-output table of the Norwegian economy" href="Lecture_3.html" />
+    <link rel="prev" title="Lecture 2 - Exploratory Data Analysis of the Use Table" href="Lecture_2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -96,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">My sample book</h1>
+      <h1 class="site-logo" id="site-title">TEP4222 - Input-Output Analysis, Trade and Environment</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -129,8 +130,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="pandas_numpy.html">
+   Introduction to Pandas and NumPy
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Lecture_2.html">
    Lecture 2 - Exploratory Data Analysis of the Use Table
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Problem Set 2 - The Industry and Final Demand Balances
   </a>
  </li>
  <li class="toctree-l1">
@@ -146,11 +157,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Lecture_4.html">
    Lecture 4 - Leontief Price Model
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Problem Set 2 - The Industry and Final Demand Balances
   </a>
  </li>
 </ul>
@@ -393,7 +399,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_2736</span><span class="o">/</span><span class="mf">3540404707.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_23036</span><span class="o">/</span><span class="mf">3540404707.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">Use_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;U15_US_2021.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s1">&#39;---&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">Use</span><span class="o">=</span><span class="n">Use_raw</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">17</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ValueAdded</span><span class="o">=</span><span class="n">Use_raw</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">18</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -552,12 +558,19 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Lecture_4.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Lecture_2.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lecture 4 - Leontief Price Model</p>
+            <p class="prev-next-title">Lecture 2 - Exploratory Data Analysis of the Use Table</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="Lecture_3.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lecture 3 - Symmetric input-output table of the Norwegian economy</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
