@@ -28,12 +28,12 @@ import matplotlib.pyplot as plt
 
 
 
-Use_raw = pd.read_csv("U15_US_2021.csv", header=3, index_col=1, na_values='---').drop('Unnamed: 0', axis=1)   
+Use_raw = pd.read_csv("data/U15_US_2021.csv", header=3, index_col=1, na_values='---').drop('Unnamed: 0', axis=1)   
 Use=Use_raw.iloc[0:17,0:15].fillna(0) 
 ValueAdded=Use_raw.iloc[18:22,0:15].fillna(0) 
 FinalDemand=Use_raw.iloc[0:17,16:21].fillna(0)
 
-Supply_raw = pd.read_csv(r'S15_US_2021.csv', header=3, index_col=1,na_values='---')
+Supply_raw = pd.read_csv(r'data/S15_US_2021.csv', header=3, index_col=1,na_values='---')
 Supply=Supply_raw.iloc[0:17,1:16].fillna(0) 
 
 
@@ -41,7 +41,7 @@ Supply=Supply_raw.iloc[0:17,1:16].fillna(0)
 # 
 # We now create a new dataframe that store the results of our calculations per industry. Which of those matrices had a dimension industry? 
 
-# In[ ]:
+# In[3]:
 
 
 IndustrySums = pd.DataFrame(index=sum_expenditure.index, 

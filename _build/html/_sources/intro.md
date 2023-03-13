@@ -29,3 +29,5 @@ The course provides the student with knowledge about: Environmentally extended I
 
 Linear algebra and programming. A basic understanding of economics. An introductory course in environmental science or environmental economics. One of the following courses or equivalent: TEP4223 Life-Cycle Assessment, TIØ4120 Operations Reasearch. Contact main lecturer for inquiries regarding prerequisites. Input Output methodology is largley based on matrix multiplication. We reccomend revising some basic matrix-vector operations from [Khan Academies Multiplying Matrix Video](https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices/x9e81a4f98389efdf:multiplying-matrices-by-matrices/v/multiplying-a-matrix-by-a-matrix).
 
+
+

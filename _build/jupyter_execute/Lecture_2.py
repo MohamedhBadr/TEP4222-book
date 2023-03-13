@@ -32,11 +32,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-UseTable = pd.read_csv("U15_US_2021.csv", header=3, index_col=1, na_values='---').drop('Unnamed: 0', axis=1)   
+UseTable = pd.read_csv("data/U15_US_2021.csv", header=3, index_col=1, na_values='---').drop('Unnamed: 0', axis=1)   
         #You may have to add a path to the file name
 
 
-# In[12]:
+# In[2]:
 
 
 UseTable
@@ -46,7 +46,7 @@ UseTable
 
 # Define the intermediate use (by industries) of commodites. The second line defines the number of digit after the comma. fillna(0) replaced Nan by zero. The last command formats the background of the table in colors depending on the size of the value. Please examine these tables.
 
-# In[20]:
+# In[3]:
 
 
 Use=UseTable.iloc[0:16,1:15]             #Use of commodities by industries
@@ -54,14 +54,14 @@ pd.set_option('display.precision', 0)
 Use.fillna(0).style.background_gradient(cmap ='Blues')
 
 
-# In[21]:
+# In[4]:
 
 
 ValueAdded=UseTable.iloc[18:21,1:15]                     #Use of Factors of Production by industry
 ValueAdded.style.background_gradient(cmap ='Blues')
 
 
-# In[24]:
+# In[5]:
 
 
 FinalDemand=UseTable.iloc[0:16,17:22]
@@ -71,7 +71,7 @@ FinalDemand=UseTable.iloc[0:16,17:22]
 # **Q1: What is the sum total of those three matrices?**  
 # Please also print out the total volume of value added and final demand. The Use table is in million US dollars. 
 
-# In[ ]:
+# In[6]:
 
 
 Use_Total = Use.sum().sum()
@@ -80,7 +80,7 @@ print('Total use of commodities by industries:', Use_Total/1000000, ' trillion d
 # print the sums in trillions for the two other matrices. Why did we have to sum twice?
 
 
-# In[ ]:
+# In[7]:
 
 
 #How do you like this figure? Why do we need to sum only once? What happens if we write (axis=1) after sum?
@@ -89,7 +89,7 @@ ValueAdded.sum().plot(kind='pie')
 
 # **Q2: Determine and plot the total operating surplus of each industry sector.**
 
-# In[ ]:
+# In[8]:
 
 
 (ValueAdded/1000).loc['Gross operating surplus'].plot(kind='hbar',xlabel='Surplus in billion $')
