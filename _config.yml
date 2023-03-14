@@ -35,4 +35,4 @@ html:
 launch_buttons:
   thebe                  : true
   colab_url: https://colab.research.google.com
-  binderhub_url: https://mybinder.org/v2/gh/MohamedhBadr/TEP4222-book/main
+  binderhub_url: https://mybinder.org/v2/gh/MohamedhBadr/TEP4222-book/HEAD
