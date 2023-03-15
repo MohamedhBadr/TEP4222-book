@@ -3,7 +3,8 @@
 
 # # Lecture 2 - Exploratory Data Analysis of the Use Table  
 
-#     
+# This tutorial we use the U15 USA use tables and perform some analysis: 
+# 
 # Last week, we looked at the Supply Table for the US. Online, you find a Jupyter Notebook which imports the Supply Table, parses it (i.e., creates a variable that describes the part of the downloaded data that is of interest), and performs the sums to anser the questions. Please make sure you understand these operations. 
 #     
 # In the first part of the present exercise, we import the US Use Table and prepare it for subsequent analysis by separating out relevant, distinct parts (parsing). Then we do some exploratory data analysis to get to know the use table. 
